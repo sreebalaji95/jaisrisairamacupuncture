@@ -1,0 +1,82 @@
+@use '../../../styles/mixins' as m;
+
+:host { display: block; }
+
+.section { @include m.section-pad; }
+
+.about-grid {
+  display: grid;
+  gap: clamp(28px, 4vw, 56px);
+  grid-template-columns: 1fr;
+  align-items: center;
+  @include m.lg { grid-template-columns: 0.85fr 1.15fr; }
+}
+
+.portrait {
+  display: grid;
+  place-items: center;
+}
+.portrait-frame {
+  position: relative;
+  width: min(380px, 100%);
+  border-radius: var(--radius-xl);
+  background: var(--gradient-soft);
+  padding: 22px;
+  box-shadow: var(--shadow-lg);
+}
+.portrait-frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  display: block;
+}
+.portrait-badge {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.portrait-badge app-icon { width: 18px; height: 18px; color: var(--color-primary); }
+
+.about-copy h2 { margin-bottom: 14px; }
+.points {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 28px;
+  display: grid;
+  gap: 12px;
+}
+.points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+.tick {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.tick app-icon { width: 16px; height: 16px; }
+
+.about-ctas { display: flex; flex-wrap: wrap; gap: 12px; }

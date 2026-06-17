@@ -1,0 +1,29 @@
+<section id="treatments" class="section treatments" aria-labelledby="treatments-title">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <span class="section-eyebrow">Treatments</span>
+      <h2 id="treatments-title">Conditions We Treat</h2>
+      <p>From chronic pain to lifestyle and women’s health, acupuncture supports the body in healing a wide range of conditions.</p>
+    </div>
+
+    <div class="filters" role="tablist" aria-label="Treatment categories">
+      <button *ngFor="let c of categories"
+              role="tab"
+              [attr.aria-selected]="active() === c"
+              [class.is-active]="active() === c"
+              (click)="setActive(c)">
+        {{ c }}
+      </button>
+    </div>
+
+    <div class="grid">
+      <article class="card" *ngFor="let t of visible(); trackBy: trackByName">
+        <span class="icon"><app-icon [name]="t.icon"></app-icon></span>
+        <div class="card-body">
+          <h3>{{ t.name }}</h3>
+          <small>{{ t.category }}</small>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

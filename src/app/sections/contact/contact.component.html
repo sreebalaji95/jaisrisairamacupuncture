@@ -1,0 +1,94 @@
+<section id="contact" class="section contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <span class="section-eyebrow">Contact</span>
+      <h2 id="contact-title">Visit Us or Book a Consultation</h2>
+      <p>We’re here to answer questions and welcome you to a calm, healing space in Tirupur.</p>
+    </div>
+
+    <div class="grid">
+      <aside class="info-card" appReveal>
+        <h3>{{ clinic.name }}</h3>
+        <small>{{ clinic.doctor }}</small>
+        <ul class="info-list">
+          <li>
+            <span class="ico"><app-icon name="map"></app-icon></span>
+            <span>{{ clinic.address }}</span>
+          </li>
+          <li>
+            <span class="ico"><app-icon name="phone"></app-icon></span>
+            <a [href]="wa.telLink">{{ clinic.phone }}</a>
+          </li>
+          <li>
+            <span class="ico"><app-icon name="mail"></app-icon></span>
+            <a [href]="wa.mailLink">{{ clinic.email }}</a>
+          </li>
+          <li *ngFor="let h of clinic.hours">
+            <span class="ico"><app-icon name="calendar"></app-icon></span>
+            <span><strong>{{ h.day }}</strong> · {{ h.time }}</span>
+          </li>
+        </ul>
+        <div class="cta-row">
+          <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            <app-icon name="whatsapp"></app-icon>
+            WhatsApp
+          </a>
+          <a [href]="wa.telLink" class="btn btn-primary">
+            <app-icon name="phone"></app-icon>
+            Call
+          </a>
+          <a [href]="wa.mailLink" class="btn btn-secondary">
+            <app-icon name="mail"></app-icon>
+            Email
+          </a>
+          <a [href]="wa.mapsLink" target="_blank" rel="noopener" class="btn btn-secondary">
+            <app-icon name="map"></app-icon>
+            Directions
+          </a>
+        </div>
+      </aside>
+
+      <div class="form-card" appReveal>
+        <h3>Quick Appointment Request</h3>
+        <p>Fill in the details — your form will open WhatsApp with the message ready to send.</p>
+        <form (ngSubmit)="submit()" novalidate>
+          <label>
+            <span>Your Name</span>
+            <input type="text" name="name" required autocomplete="name"
+                   [ngModel]="form().name" (ngModelChange)="update('name', $event)" placeholder="e.g. Ramesh K." />
+          </label>
+          <label>
+            <span>Phone Number</span>
+            <input type="tel" name="phone" required autocomplete="tel" inputmode="tel"
+                   [ngModel]="form().phone" (ngModelChange)="update('phone', $event)" placeholder="+91 ..." />
+          </label>
+          <label>
+            <span>Preferred Date</span>
+            <input type="date" name="date"
+                   [ngModel]="form().date" (ngModelChange)="update('date', $event)" />
+          </label>
+          <label class="full">
+            <span>Health Concern</span>
+            <textarea name="concern" rows="3"
+                      [ngModel]="form().concern" (ngModelChange)="update('concern', $event)"
+                      placeholder="Briefly describe your condition or what you’d like help with"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary full">
+            <app-icon name="whatsapp"></app-icon>
+            Send via WhatsApp
+          </button>
+        </form>
+      </div>
+
+      <div class="map-card" appReveal>
+        <iframe
+          [src]="mapEmbed"
+          width="100%" height="280"
+          style="border:0; border-radius: var(--radius-lg);"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map to Jaisri Sairam Acupuncture Centre"></iframe>
+      </div>
+    </div>
+  </div>
+</section>

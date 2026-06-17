@@ -1,0 +1,83 @@
+<section id="home" class="hero" aria-labelledby="hero-title">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="orb orb-green"></span>
+    <span class="orb orb-blue"></span>
+    <span class="orb orb-soft"></span>
+  </div>
+  <div class="container hero-grid">
+    <div class="hero-copy" appReveal>
+      <span class="section-eyebrow">
+        <app-icon name="lotus"></app-icon>
+        Natural Healing • Drug-Free
+      </span>
+      <h1 id="hero-title">
+        Natural Healing Through
+        <span class="text-gradient">Acupuncture</span>
+      </h1>
+      <p>
+        Experience safe, drug-free and effective acupuncture treatments for pain relief, stress management,
+        lifestyle disorders and overall wellness — personalized by Dr. Padmanabhan in Tirupur.
+      </p>
+      <div class="hero-ctas">
+        <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-primary">
+          <app-icon name="whatsapp"></app-icon>
+          Book Consultation
+        </a>
+        <a [href]="wa.telLink" class="btn btn-secondary">
+          <app-icon name="phone"></app-icon>
+          Call Now
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item" *ngFor="let s of stats; let i = index">
+          <strong>{{ s.value }}{{ s.suffix }}</strong>
+          <span>{{ s.label }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-art" appReveal aria-hidden="true">
+      <svg viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Acupuncture wellness illustration">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2BA84A"/>
+            <stop offset="100%" stop-color="#1E88E5"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#D9F1E1"/>
+            <stop offset="100%" stop-color="#DCEEFB"/>
+          </linearGradient>
+        </defs>
+        <circle cx="260" cy="260" r="220" fill="url(#g2)"/>
+        <circle cx="260" cy="260" r="160" fill="none" stroke="#fff" stroke-width="14" opacity="0.6"/>
+        <path d="M260 100c-30 40-30 80 0 120 30-40 30-80 0-120z" fill="url(#g1)" opacity="0.85"/>
+        <path d="M120 220c50-20 110 0 140 40-50 0-110-20-140-40zM400 220c-50-20-110 0-140 40 50 0 110-20 140-40z" fill="url(#g1)" opacity="0.7"/>
+        <path d="M260 220c-80 0-140 60-140 120h280c0-60-60-120-140-120z" fill="url(#g1)"/>
+        <g stroke="#fff" stroke-width="3" fill="#fff">
+          <circle cx="220" cy="300" r="5"/>
+          <circle cx="260" cy="280" r="5"/>
+          <circle cx="300" cy="300" r="5"/>
+          <circle cx="240" cy="335" r="5"/>
+          <circle cx="280" cy="335" r="5"/>
+        </g>
+        <g stroke="#1E88E5" stroke-width="2" stroke-dasharray="3 4" fill="none" opacity="0.7">
+          <path d="M220 300c-50-10-80-50-90-100M260 280c0-50 20-90 60-130M300 300c40-10 70-50 90-100"/>
+        </g>
+      </svg>
+      <div class="float-card float-card-1">
+        <span class="dot dot-green"></span>
+        <div>
+          <strong>Sterile, Single-use</strong>
+          <small>Safe acupuncture needles</small>
+        </div>
+      </div>
+      <div class="float-card float-card-2">
+        <app-icon name="heart"></app-icon>
+        <div>
+          <strong>Personalized Care</strong>
+          <small>Plan tailored to you</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

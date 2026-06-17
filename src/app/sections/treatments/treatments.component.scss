@@ -1,0 +1,87 @@
+@use '../../../styles/mixins' as m;
+
+:host { display: block; }
+.section { padding-block: clamp(48px, 8vw, 96px); }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.filters button {
+  padding: 9px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-size: 0.86rem;
+  border: 1px solid transparent;
+  transition: all var(--transition);
+}
+.filters button:hover { color: var(--color-primary-dark); background: var(--color-primary-soft); }
+.filters button.is-active {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: 0 8px 18px -8px rgba(43,168,74,0.5);
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  padding: 18px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  inset: auto -40% -60% auto;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(43,168,74,0.12), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-soft);
+}
+.card:hover::after { opacity: 1; }
+
+.icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.icon app-icon { width: 22px; height: 22px; }
+
+.card-body { display: flex; flex-direction: column; }
+.card-body h3 {
+  font-size: 0.95rem;
+  margin: 0 0 2px;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+.card-body small {
+  font-size: 0.72rem;
+  color: var(--color-text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}

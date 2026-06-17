@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FAQS } from '../../shared/data/faqs';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
+import { I18nService } from '../../core/i18n.service';
 
 @Component({
   selector: 'app-faq',
@@ -12,13 +13,13 @@ import { IconComponent } from '../../shared/ui/icon.component';
     <section id="faq" class="section faq" aria-labelledby="faq-title">
       <div class="container">
         <div class="section-heading" appReveal>
-          <span class="section-eyebrow">FAQ</span>
-          <h2 id="faq-title">Common Questions, Honest Answers</h2>
-          <p>Everything you may want to know before your first acupuncture visit.</p>
+          <span class="section-eyebrow">{{ i18n.t('faq.eyebrow') }}</span>
+          <h2 id="faq-title">{{ i18n.t('faq.title') }}</h2>
+          <p>{{ i18n.t('faq.subtitle') }}</p>
         </div>
 
         <div class="list" appReveal>
-          <details *ngFor="let f of items; let i = index"
+          <details *ngFor="let f of items(); let i = index"
                    [open]="open() === i"
                    (toggle)="onToggle(i, $event)">
             <summary>
@@ -42,7 +43,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
       gap: 12px;
     }
     details {
-      background: #fff;
+      background: var(--color-surface);
       border: 1px solid var(--color-border-soft);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
@@ -88,8 +89,15 @@ import { IconComponent } from '../../shared/ui/icon.component';
   `]
 })
 export class FaqComponent {
-  readonly items = FAQS;
+  readonly i18n = inject(I18nService);
   readonly open = signal<number>(0);
+
+  readonly items = computed(() =>
+    FAQS.map((_, i) => ({
+      question: this.i18n.t(`faq.q${i + 1}`),
+      answer: this.i18n.t(`faq.a${i + 1}`)
+    }))
+  );
 
   onToggle(index: number, ev: Event): void {
     const el = ev.target as HTMLDetailsElement;

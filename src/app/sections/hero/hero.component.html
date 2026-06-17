@@ -8,28 +8,25 @@
     <div class="hero-copy" appReveal>
       <span class="section-eyebrow">
         <app-icon name="lotus"></app-icon>
-        Natural Healing • Drug-Free
+        {{ i18n.t('hero.eyebrow') }}
       </span>
       <h1 id="hero-title">
-        Natural Healing Through
-        <span class="text-gradient">Acupuncture</span>
+        {{ i18n.t('hero.titleLine1') }}
+        <span class="text-gradient">{{ i18n.t('hero.titleHighlight') }}</span>
       </h1>
-      <p>
-        Experience safe, drug-free and effective acupuncture treatments for pain relief, stress management,
-        lifestyle disorders and overall wellness — personalized by Dr. Padmanabhan in Tirupur.
-      </p>
+      <p>{{ i18n.t('hero.description') }}</p>
       <div class="hero-ctas">
         <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-primary">
           <app-icon name="whatsapp"></app-icon>
-          Book Consultation
+          {{ i18n.t('common.bookConsultation') }}
         </a>
         <a [href]="wa.telLink" class="btn btn-secondary">
           <app-icon name="phone"></app-icon>
-          Call Now
+          {{ i18n.t('common.callNow') }}
         </a>
       </div>
       <div class="hero-trust">
-        <div class="trust-item" *ngFor="let s of stats; let i = index">
+        <div class="trust-item" *ngFor="let s of stats()">
           <strong>{{ s.value }}{{ s.suffix }}</strong>
           <span>{{ s.label }}</span>
         </div>
@@ -67,15 +64,15 @@
       <div class="float-card float-card-1">
         <span class="dot dot-green"></span>
         <div>
-          <strong>Sterile, Single-use</strong>
-          <small>Safe acupuncture needles</small>
+          <strong>{{ i18n.t('hero.floatCard1Title') }}</strong>
+          <small>{{ i18n.t('hero.floatCard1Sub') }}</small>
         </div>
       </div>
       <div class="float-card float-card-2">
         <app-icon name="heart"></app-icon>
         <div>
-          <strong>Personalized Care</strong>
-          <small>Plan tailored to you</small>
+          <strong>{{ i18n.t('hero.floatCard2Title') }}</strong>
+          <small>{{ i18n.t('hero.floatCard2Sub') }}</small>
         </div>
       </div>
     </div>

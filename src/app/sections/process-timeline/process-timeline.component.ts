@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PROCESS_STEPS } from '../../shared/data/process';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
+import { I18nService } from '../../core/i18n.service';
 
 @Component({
   selector: 'app-process-timeline',
@@ -12,12 +13,12 @@ import { IconComponent } from '../../shared/ui/icon.component';
     <section id="process" class="section process" aria-labelledby="process-title">
       <div class="container">
         <div class="section-heading" appReveal>
-          <span class="section-eyebrow">Treatment Process</span>
-          <h2 id="process-title">Your Path to Healing — Step by Step</h2>
-          <p>Clear, comfortable and personalized — from your first message to lasting wellness.</p>
+          <span class="section-eyebrow">{{ i18n.t('process.eyebrow') }}</span>
+          <h2 id="process-title">{{ i18n.t('process.title') }}</h2>
+          <p>{{ i18n.t('process.subtitle') }}</p>
         </div>
         <ol class="timeline">
-          <li *ngFor="let s of steps; let last = last" appReveal>
+          <li *ngFor="let s of steps(); let last = last" appReveal>
             <span class="num">{{ s.step }}</span>
             <div class="content">
               <span class="icon"><app-icon [name]="s.icon"></app-icon></span>
@@ -32,7 +33,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
   `,
   styles: [`
     :host { display: block; }
-    .section { padding-block: clamp(48px, 8vw, 96px); background: linear-gradient(180deg, #f5faf7 0%, #ffffff 100%); }
+    .section { padding-block: clamp(48px, 8vw, 96px); background: linear-gradient(180deg, var(--color-surface-muted) 0%, var(--color-bg) 100%); }
 
     .timeline {
       list-style: none;
@@ -47,7 +48,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
     }
     .timeline li {
       position: relative;
-      background: #fff;
+      background: var(--color-surface);
       border-radius: var(--radius-lg);
       padding: 28px 24px 24px;
       border: 1px solid var(--color-border-soft);
@@ -104,5 +105,14 @@ import { IconComponent } from '../../shared/ui/icon.component';
   `]
 })
 export class ProcessTimelineComponent {
-  readonly steps = PROCESS_STEPS;
+  readonly i18n = inject(I18nService);
+
+  readonly steps = computed(() =>
+    PROCESS_STEPS.map((s, i) => ({
+      step: s.step,
+      icon: s.icon,
+      title: this.i18n.t(`process.step${i + 1}.title`),
+      description: this.i18n.t(`process.step${i + 1}.desc`)
+    }))
+  );
 }

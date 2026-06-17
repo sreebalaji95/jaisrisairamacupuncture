@@ -1,10 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WhatsappService } from '../../core/whatsapp.service';
 import { CLINIC } from '../../shared/data/clinic';
 import { HERO_STATS } from '../../shared/data/about';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
+import { I18nService } from '../../core/i18n.service';
 
 @Component({
   selector: 'app-hero',
@@ -16,5 +17,14 @@ import { IconComponent } from '../../shared/ui/icon.component';
 export class HeroComponent {
   readonly wa = inject(WhatsappService);
   readonly clinic = CLINIC;
-  readonly stats = HERO_STATS;
+  readonly i18n = inject(I18nService);
+
+  readonly stats = computed(() => {
+    const statLabels = ['hero.stat1Label', 'hero.stat2Label', 'hero.stat3Label'];
+    return HERO_STATS.map((s, i) => ({
+      value: s.value,
+      suffix: s.suffix,
+      label: this.i18n.t(statLabels[i])
+    }));
+  });
 }

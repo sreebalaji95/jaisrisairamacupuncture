@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ABOUT_ACUPUNCTURE } from '../../shared/data/about';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
+import { I18nService } from '../../core/i18n.service';
 
 @Component({
   selector: 'app-about-acupuncture',
@@ -12,12 +13,12 @@ import { IconComponent } from '../../shared/ui/icon.component';
     <section id="about-acupuncture" class="section about-acupuncture" aria-labelledby="about-acu-title">
       <div class="container">
         <div class="section-heading" appReveal>
-          <span class="section-eyebrow">About Acupuncture</span>
-          <h2 id="about-acu-title">A Time-Tested Path to Whole-Body Wellness</h2>
-          <p>Acupuncture is a complete therapeutic system, not just a pain treatment. Here’s what makes it effective and safe.</p>
+          <span class="section-eyebrow">{{ i18n.t('aboutAcu.eyebrow') }}</span>
+          <h2 id="about-acu-title">{{ i18n.t('aboutAcu.title') }}</h2>
+          <p>{{ i18n.t('aboutAcu.subtitle') }}</p>
         </div>
         <div class="grid">
-          <article class="card" *ngFor="let item of items; let i = index"
+          <article class="card" *ngFor="let item of items(); let i = index"
                    appReveal [class]="'reveal-delay-' + (i % 3)">
             <span class="icon"><app-icon [name]="item.icon"></app-icon></span>
             <h3>{{ item.title }}</h3>
@@ -29,14 +30,14 @@ import { IconComponent } from '../../shared/ui/icon.component';
   `,
   styles: [`
     :host { display: block; }
-    .section { padding-block: clamp(48px, 8vw, 96px); background: linear-gradient(180deg, #ffffff 0%, #f5faf7 100%); }
+    .section { padding-block: clamp(48px, 8vw, 96px); background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface-muted) 100%); }
     .grid {
       display: grid;
       gap: 18px;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
     .card {
-      background: #fff;
+      background: var(--color-surface);
       padding: 26px 24px;
       border-radius: var(--radius-lg);
       border: 1px solid var(--color-border-soft);
@@ -62,5 +63,13 @@ import { IconComponent } from '../../shared/ui/icon.component';
   `]
 })
 export class AboutAcupunctureComponent {
-  readonly items = ABOUT_ACUPUNCTURE;
+  readonly i18n = inject(I18nService);
+
+  readonly items = computed(() =>
+    ABOUT_ACUPUNCTURE.map((item, i) => ({
+      icon: item.icon,
+      title: this.i18n.t(`aboutAcu.item${i + 1}.title`),
+      description: this.i18n.t(`aboutAcu.item${i + 1}.desc`)
+    }))
+  );
 }

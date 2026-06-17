@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TESTIMONIALS } from '../../shared/data/testimonials';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
+import { I18nService } from '../../core/i18n.service';
 
 @Component({
   selector: 'app-testimonials',
@@ -12,9 +13,9 @@ import { IconComponent } from '../../shared/ui/icon.component';
     <section id="testimonials" class="section testimonials" aria-labelledby="testi-title">
       <div class="container">
         <div class="section-heading" appReveal>
-          <span class="section-eyebrow">Testimonials</span>
-          <h2 id="testi-title">Real Stories of Natural Healing</h2>
-          <p>Patients share how acupuncture has helped them return to a life they love.</p>
+          <span class="section-eyebrow">{{ i18n.t('testimonials.eyebrow') }}</span>
+          <h2 id="testi-title">{{ i18n.t('testimonials.title') }}</h2>
+          <p>{{ i18n.t('testimonials.subtitle') }}</p>
         </div>
         <div class="grid">
           <article class="card" *ngFor="let t of items" appReveal>
@@ -22,12 +23,12 @@ import { IconComponent } from '../../shared/ui/icon.component';
             <div class="stars" aria-label="5 star rating">
               <app-icon *ngFor="let _ of stars(t.rating)" name="star"></app-icon>
             </div>
-            <p class="quote">“{{ t.text }}”</p>
+            <p class="quote">\u201C{{ t.text }}\u201D</p>
             <div class="footer">
               <span class="avatar">{{ t.name.charAt(0) }}</span>
               <div>
                 <strong>{{ t.name }}</strong>
-                <small>{{ t.location }} • {{ t.treatment }}</small>
+                <small>{{ t.location }} \u2022 {{ t.treatment }}</small>
               </div>
             </div>
           </article>
@@ -47,7 +48,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
     .card {
-      background: #fff;
+      background: var(--color-surface);
       border-radius: var(--radius-lg);
       padding: 28px 24px;
       box-shadow: var(--shadow-sm);
@@ -100,6 +101,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
   `]
 })
 export class TestimonialsComponent {
+  readonly i18n = inject(I18nService);
   readonly items = TESTIMONIALS;
   stars(n: number) { return Array.from({ length: n }); }
 }

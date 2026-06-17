@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { WhatsappService } from '../../core/whatsapp.service';
 import { IconComponent } from '../../shared/ui/icon.component';
+import { I18nService } from '../../core/i18n.service';
 
 @Component({
   selector: 'app-floating-whatsapp',
@@ -11,7 +12,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
        aria-label="Book consultation on WhatsApp">
       <span class="ring"></span>
       <span class="icon"><app-icon name="whatsapp"></app-icon></span>
-      <span class="label">Chat on WhatsApp</span>
+      <span class="label">{{ i18n.t('common.chatOnWhatsapp') }}</span>
     </a>
   `,
   styles: [`
@@ -67,4 +68,5 @@ import { IconComponent } from '../../shared/ui/icon.component';
 })
 export class FloatingWhatsappComponent {
   readonly wa = inject(WhatsappService);
+  readonly i18n = inject(I18nService);
 }

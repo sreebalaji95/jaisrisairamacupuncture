@@ -1,10 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DOCTOR_POINTS } from '../../shared/data/about';
 import { CLINIC } from '../../shared/data/clinic';
 import { WhatsappService } from '../../core/whatsapp.service';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
+import { I18nService } from '../../core/i18n.service';
 
 @Component({
   selector: 'app-about-doctor',
@@ -14,7 +14,15 @@ import { IconComponent } from '../../shared/ui/icon.component';
   styleUrl: './about-doctor.component.scss'
 })
 export class AboutDoctorComponent {
-  readonly points = DOCTOR_POINTS;
   readonly clinic = CLINIC;
   readonly wa = inject(WhatsappService);
+  readonly i18n = inject(I18nService);
+
+  readonly points = computed(() => [
+    this.i18n.t('aboutDoctor.point1'),
+    this.i18n.t('aboutDoctor.point2'),
+    this.i18n.t('aboutDoctor.point3'),
+    this.i18n.t('aboutDoctor.point4'),
+    this.i18n.t('aboutDoctor.point5'),
+  ]);
 }

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WHY_CHOOSE } from '../../shared/data/why-choose';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
+import { I18nService } from '../../core/i18n.service';
 
 @Component({
   selector: 'app-why-choose-us',
@@ -12,12 +13,12 @@ import { IconComponent } from '../../shared/ui/icon.component';
     <section id="why-choose-us" class="section why" aria-labelledby="why-title">
       <div class="container">
         <div class="section-heading" appReveal>
-          <span class="section-eyebrow">Why Choose Us</span>
-          <h2 id="why-title">A Clinic Built Around You</h2>
-          <p>From your first call to your follow-up — care that is personal, attentive and rooted in trust.</p>
+          <span class="section-eyebrow">{{ i18n.t('whyChoose.eyebrow') }}</span>
+          <h2 id="why-title">{{ i18n.t('whyChoose.title') }}</h2>
+          <p>{{ i18n.t('whyChoose.subtitle') }}</p>
         </div>
         <div class="grid">
-          <article class="card" *ngFor="let w of items">
+          <article class="card" *ngFor="let w of items()">
             <span class="icon"><app-icon [name]="w.icon"></app-icon></span>
             <div>
               <h3>{{ w.title }}</h3>
@@ -41,7 +42,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
       gap: 16px;
       align-items: flex-start;
       padding: 22px 22px;
-      background: #fff;
+      background: var(--color-surface);
       border: 1px solid var(--color-border-soft);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
@@ -66,5 +67,13 @@ import { IconComponent } from '../../shared/ui/icon.component';
   `]
 })
 export class WhyChooseUsComponent {
-  readonly items = WHY_CHOOSE;
+  readonly i18n = inject(I18nService);
+
+  readonly items = computed(() =>
+    WHY_CHOOSE.map((w, i) => ({
+      icon: w.icon,
+      title: this.i18n.t(`whyChoose.item${i + 1}.title`),
+      description: this.i18n.t(`whyChoose.item${i + 1}.desc`)
+    }))
+  );
 }

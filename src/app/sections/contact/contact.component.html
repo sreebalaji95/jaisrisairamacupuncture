@@ -1,9 +1,9 @@
 <section id="contact" class="section contact" aria-labelledby="contact-title">
   <div class="container">
     <div class="section-heading" appReveal>
-      <span class="section-eyebrow">Contact</span>
-      <h2 id="contact-title">Visit Us or Book a Consultation</h2>
-      <p>We’re here to answer questions and welcome you to a calm, healing space in Tirupur.</p>
+      <span class="section-eyebrow">{{ i18n.t('contact.eyebrow') }}</span>
+      <h2 id="contact-title">{{ i18n.t('contact.title') }}</h2>
+      <p>{{ i18n.t('contact.subtitle') }}</p>
     </div>
 
     <div class="grid">
@@ -23,59 +23,63 @@
             <span class="ico"><app-icon name="mail"></app-icon></span>
             <a [href]="wa.mailLink">{{ clinic.email }}</a>
           </li>
-          <li *ngFor="let h of clinic.hours">
+          <li>
             <span class="ico"><app-icon name="calendar"></app-icon></span>
-            <span><strong>{{ h.day }}</strong> · {{ h.time }}</span>
+            <span><strong>{{ i18n.t('hours.monSat') }}</strong> · {{ i18n.t('hours.monSatTime') }}</span>
+          </li>
+          <li>
+            <span class="ico"><app-icon name="calendar"></app-icon></span>
+            <span><strong>{{ i18n.t('hours.sunday') }}</strong> · {{ i18n.t('hours.sundayTime') }}</span>
           </li>
         </ul>
         <div class="cta-row">
           <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-whatsapp">
             <app-icon name="whatsapp"></app-icon>
-            WhatsApp
+            {{ i18n.t('common.whatsapp') }}
           </a>
           <a [href]="wa.telLink" class="btn btn-primary">
             <app-icon name="phone"></app-icon>
-            Call
+            {{ i18n.t('common.call') }}
           </a>
           <a [href]="wa.mailLink" class="btn btn-secondary">
             <app-icon name="mail"></app-icon>
-            Email
+            {{ i18n.t('common.email') }}
           </a>
           <a [href]="wa.mapsLink" target="_blank" rel="noopener" class="btn btn-secondary">
             <app-icon name="map"></app-icon>
-            Directions
+            {{ i18n.t('common.directions') }}
           </a>
         </div>
       </aside>
 
       <div class="form-card" appReveal>
-        <h3>Quick Appointment Request</h3>
-        <p>Fill in the details — your form will open WhatsApp with the message ready to send.</p>
+        <h3>{{ i18n.t('contact.formTitle') }}</h3>
+        <p>{{ i18n.t('contact.formSubtitle') }}</p>
         <form (ngSubmit)="submit()" novalidate>
           <label>
-            <span>Your Name</span>
+            <span>{{ i18n.t('contact.labelName') }}</span>
             <input type="text" name="name" required autocomplete="name"
-                   [ngModel]="form().name" (ngModelChange)="update('name', $event)" placeholder="e.g. Ramesh K." />
+                   [ngModel]="form().name" (ngModelChange)="update('name', $event)" [placeholder]="i18n.t('contact.placeholderName')" />
           </label>
           <label>
-            <span>Phone Number</span>
+            <span>{{ i18n.t('contact.labelPhone') }}</span>
             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel"
-                   [ngModel]="form().phone" (ngModelChange)="update('phone', $event)" placeholder="+91 ..." />
+                   [ngModel]="form().phone" (ngModelChange)="update('phone', $event)" [placeholder]="i18n.t('contact.placeholderPhone')" />
           </label>
           <label>
-            <span>Preferred Date</span>
+            <span>{{ i18n.t('contact.labelDate') }}</span>
             <input type="date" name="date"
                    [ngModel]="form().date" (ngModelChange)="update('date', $event)" />
           </label>
           <label class="full">
-            <span>Health Concern</span>
+            <span>{{ i18n.t('contact.labelConcern') }}</span>
             <textarea name="concern" rows="3"
                       [ngModel]="form().concern" (ngModelChange)="update('concern', $event)"
-                      placeholder="Briefly describe your condition or what you’d like help with"></textarea>
+                      [placeholder]="i18n.t('contact.placeholderConcern')"></textarea>
           </label>
           <button type="submit" class="btn btn-primary full">
             <app-icon name="whatsapp"></app-icon>
-            Send via WhatsApp
+            {{ i18n.t('common.sendViaWhatsapp') }}
           </button>
         </form>
       </div>

@@ -30,7 +30,7 @@
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: var(--radius-lg);
-  background: #fff;
+  background: var(--color-surface);
   display: block;
 }
 .portrait-badge {
@@ -38,7 +38,7 @@
   bottom: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: #fff;
+  background: var(--color-surface);
   padding: 10px 18px;
   border-radius: var(--radius-pill);
   box-shadow: var(--shadow-md);

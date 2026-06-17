@@ -8,21 +8,17 @@
              width="640" height="800">
         <span class="portrait-badge">
           <app-icon name="badge"></app-icon>
-          Certified Acupuncturist
+          {{ i18n.t('aboutDoctor.badge') }}
         </span>
       </div>
     </div>
 
     <div class="about-copy" appReveal>
-      <span class="section-eyebrow">About the Doctor</span>
-      <h2 id="about-doctor-title">Meet Dr. Padmanabhan</h2>
-      <p>
-        An experienced acupuncture practitioner dedicated to holistic healing, Dr. Padmanabhan combines
-        traditional knowledge with modern, evidence-based practice. Each consultation begins with
-        understanding your story — your symptoms, lifestyle and goals — so the treatment plan is truly your own.
-      </p>
+      <span class="section-eyebrow">{{ i18n.t('aboutDoctor.eyebrow') }}</span>
+      <h2 id="about-doctor-title">{{ i18n.t('aboutDoctor.title') }}</h2>
+      <p>{{ i18n.t('aboutDoctor.description') }}</p>
       <ul class="points">
-        <li *ngFor="let p of points">
+        <li *ngFor="let p of points()">
           <span class="tick"><app-icon name="check"></app-icon></span>
           {{ p }}
         </li>
@@ -30,7 +26,7 @@
       <div class="about-ctas">
         <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-primary">
           <app-icon name="whatsapp"></app-icon>
-          Book a Consultation
+          {{ i18n.t('common.bookAConsultation') }}
         </a>
         <a [href]="wa.telLink" class="btn btn-ghost">
           <app-icon name="phone"></app-icon>

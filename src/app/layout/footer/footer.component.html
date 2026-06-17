@@ -4,11 +4,11 @@
       <div class="brand">
         <span class="brand-mark" aria-hidden="true">JS</span>
         <span class="brand-text">
-          <strong>Jaisri Sairam</strong>
-          <small>Acupuncture Centre</small>
+          <strong>{{ i18n.t('header.brandName') }}</strong>
+          <small>{{ i18n.t('header.brandSub') }}</small>
         </span>
       </div>
-      <p>Natural, drug-free healing through acupuncture. Personalized care by Dr. Padmanabhan in Tirupur.</p>
+      <p>{{ i18n.t('footer.tagline') }}</p>
       <div class="socials" aria-label="Social links">
         <a href="#" aria-label="Facebook"><app-icon name="facebook"></app-icon></a>
         <a href="#" aria-label="Instagram"><app-icon name="instagram"></app-icon></a>
@@ -17,25 +17,25 @@
     </div>
 
     <div class="col">
-      <h4>Quick Links</h4>
+      <h4>{{ i18n.t('footer.quickLinks') }}</h4>
       <ul>
-        <li *ngFor="let link of links">
+        <li *ngFor="let link of links()">
           <a [routerLink]="['/']" [fragment]="link.fragment">{{ link.label }}</a>
         </li>
       </ul>
     </div>
 
     <div class="col">
-      <h4>Treatments</h4>
+      <h4>{{ i18n.t('footer.treatments') }}</h4>
       <ul>
-        <li *ngFor="let s of serviceHighlights">
+        <li *ngFor="let s of serviceHighlights()">
           <a [routerLink]="['/']" fragment="treatments">{{ s }}</a>
         </li>
       </ul>
     </div>
 
     <div class="col col-contact">
-      <h4>Contact</h4>
+      <h4>{{ i18n.t('footer.contact') }}</h4>
       <ul class="contact-list">
         <li><app-icon name="map"></app-icon><span>{{ clinic.address }}</span></li>
         <li><app-icon name="phone"></app-icon><a [href]="wa.telLink">{{ clinic.phone }}</a></li>
@@ -43,14 +43,14 @@
       </ul>
       <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-whatsapp">
         <app-icon name="whatsapp"></app-icon>
-        Book Consultation
+        {{ i18n.t('common.bookConsultation') }}
       </a>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <small>&copy; {{ year }} {{ clinic.name }}. All Rights Reserved.</small>
-      <small>Crafted with care for natural healing.</small>
+      <small>&copy; {{ year }} {{ clinic.name }}. {{ i18n.t('footer.copyright') }}</small>
+      <small>{{ i18n.t('footer.crafted') }}</small>
     </div>
   </div>
 </footer>

@@ -23,7 +23,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: #fff;
+      background: var(--color-surface);
       color: var(--color-primary);
       box-shadow: 0 14px 24px -12px rgba(16,42,67,0.25);
       border: 1px solid var(--color-border-soft);

@@ -1,0 +1,76 @@
+@use '../../../styles/mixins' as m;
+
+:host { display: contents; }
+
+.site-footer {
+  background: linear-gradient(180deg, var(--color-surface-muted) 0%, var(--color-surface-tint) 100%);
+  color: var(--color-text);
+  padding-top: clamp(56px, 8vw, 88px);
+  margin-top: clamp(48px, 8vw, 88px);
+  border-top: 1px solid var(--color-border-soft);
+}
+.footer-grid {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: 1fr;
+  @include m.md { grid-template-columns: 1.4fr 1fr 1fr 1.2fr; }
+}
+.col h4 {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  color: var(--color-text);
+}
+.col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.col ul a { color: var(--color-text-muted); }
+.col ul a:hover { color: var(--color-primary); }
+
+.brand { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.brand-mark {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: var(--gradient-primary);
+  display: grid; place-items: center;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-text strong { font-family: var(--font-heading); font-size: 1.05rem; }
+.brand-text small { font-size: 0.72rem; color: var(--color-text-muted); }
+
+.socials { display: flex; gap: 10px; margin-top: 18px; }
+.socials a {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  display: grid; place-items: center;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-soft);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+.socials a app-icon { width: 18px; height: 18px; }
+.socials a:hover { background: var(--color-primary); color: #fff; transform: translateY(-2px); }
+
+.contact-list { gap: 12px; }
+.contact-list li {
+  display: flex; gap: 10px; align-items: flex-start;
+  color: var(--color-text-muted);
+}
+.contact-list li app-icon { width: 18px; height: 18px; color: var(--color-primary); flex-shrink: 0; margin-top: 3px; }
+.contact-list a { color: var(--color-text-muted); }
+.contact-list a:hover { color: var(--color-primary); }
+
+.col-contact .btn { margin-top: 16px; width: 100%; }
+
+.footer-bottom {
+  margin-top: 56px;
+  border-top: 1px solid var(--color-border-soft);
+  padding: 20px 0;
+}
+.footer-bottom .container {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  color: var(--color-text-soft);
+  font-size: 0.82rem;
+}

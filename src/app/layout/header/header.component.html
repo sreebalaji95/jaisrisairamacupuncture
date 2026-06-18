@@ -1,0 +1,62 @@
+<header class="site-header" [class.is-scrolled]="scrolled()">
+  <div class="container header-inner">
+    <a routerLink="/" fragment="home" class="brand" (click)="closeDrawer()">
+      <span class="brand-mark" aria-hidden="true">JS</span>
+      <span class="brand-text">
+        <strong>{{ i18n.t('header.brandName') }}</strong>
+        <small>{{ i18n.t('header.brandSub') }}</small>
+      </span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <a *ngFor="let link of links()"
+         [routerLink]="['/']"
+         [fragment]="link.fragment">
+        {{ link.label }}
+      </a>
+    </nav>
+
+    <div class="header-cta">
+      <div class="header-switches">
+        <app-theme-switch />
+        <app-lang-switch />
+      </div>
+      <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-primary cta-desktop">
+        <app-icon name="whatsapp"></app-icon>
+        {{ i18n.t('common.bookConsultation') }}
+      </a>
+      <button class="menu-btn" (click)="toggleDrawer()"
+              [attr.aria-expanded]="drawerOpen()"
+              aria-controls="mobile-drawer" [attr.aria-label]="i18n.t('header.openMenu')">
+        <app-icon [name]="drawerOpen() ? 'close' : 'menu'"></app-icon>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="mobile-drawer" [class.is-open]="drawerOpen()" (click)="closeDrawer()">
+  <div class="drawer-panel" (click)="$event.stopPropagation()">
+    <nav aria-label="Mobile">
+      <a *ngFor="let link of links()"
+         [routerLink]="['/']"
+         [fragment]="link.fragment"
+         (click)="closeDrawer()">
+        {{ link.label }}
+      </a>
+    </nav>
+    <div class="drawer-cta">
+      <div class="drawer-switches">
+        <app-theme-switch />
+        <app-lang-switch />
+      </div>
+      <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-primary">
+        <app-icon name="whatsapp"></app-icon>
+        {{ i18n.t('common.bookOnWhatsapp') }}
+      </a>
+      <a [href]="wa.telLink" class="btn btn-secondary">
+        <app-icon name="phone"></app-icon>
+        {{ clinic.phone }}
+      </a>
+    </div>
+  </div>
+</div>

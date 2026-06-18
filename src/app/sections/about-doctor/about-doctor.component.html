@@ -1,0 +1,38 @@
+<section id="about-doctor" class="about-doctor section" aria-labelledby="about-doctor-title">
+  <div class="container about-grid">
+    <div class="portrait" appReveal>
+      <div class="portrait-frame">
+        <img src="assets/images/doctor.jpg"
+             alt="Dr. Padmanabhan, certified acupuncturist at Jaisri Sairam Acupuncture Centre"
+             loading="lazy" decoding="async"
+             width="640" height="800">
+        <span class="portrait-badge">
+          <app-icon name="badge"></app-icon>
+          {{ i18n.t('aboutDoctor.badge') }}
+        </span>
+      </div>
+    </div>
+
+    <div class="about-copy" appReveal>
+      <span class="section-eyebrow">{{ i18n.t('aboutDoctor.eyebrow') }}</span>
+      <h2 id="about-doctor-title">{{ i18n.t('aboutDoctor.title') }}</h2>
+      <p>{{ i18n.t('aboutDoctor.description') }}</p>
+      <ul class="points">
+        <li *ngFor="let p of points()">
+          <span class="tick"><app-icon name="check"></app-icon></span>
+          {{ p }}
+        </li>
+      </ul>
+      <div class="about-ctas">
+        <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-primary">
+          <app-icon name="whatsapp"></app-icon>
+          {{ i18n.t('common.bookAConsultation') }}
+        </a>
+        <a [href]="wa.telLink" class="btn btn-ghost">
+          <app-icon name="phone"></app-icon>
+          {{ clinic.phone }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

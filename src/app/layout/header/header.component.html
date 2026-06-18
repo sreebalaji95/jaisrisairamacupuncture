@@ -17,8 +17,10 @@
     </nav>
 
     <div class="header-cta">
-      <app-theme-switch />
-      <app-lang-switch />
+      <div class="header-switches">
+        <app-theme-switch />
+        <app-lang-switch />
+      </div>
       <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-primary cta-desktop">
         <app-icon name="whatsapp"></app-icon>
         {{ i18n.t('common.bookConsultation') }}

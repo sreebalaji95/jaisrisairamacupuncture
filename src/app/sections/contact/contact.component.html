@@ -10,6 +10,7 @@
       <aside class="info-card" appReveal>
         <h3>{{ clinic.name }}</h3>
         <small>{{ clinic.doctor }}</small>
+        <p class="credentials">{{ qualifications().join(' • ') }}</p>
         <ul class="info-list">
           <li>
             <span class="ico"><app-icon name="map"></app-icon></span>

@@ -50,6 +50,13 @@ export const TA: Record<string, string> = {
   'aboutDoctor.point3': 'முற்றிலும் மருந்தில்லா சிகிச்சைகள்',
   'aboutDoctor.point4': 'தனிப்பயனாக்கப்பட்ட நோயறிதல் மற்றும் திட்டம்',
   'aboutDoctor.point5': 'நீண்டகால நலனுக்கு முக்கியத்துவம், விரைவான தீர்வுகள் அல்ல',
+  'aboutDoctor.qualificationsTitle': 'தகுதிகள் & சான்றிதழ்கள்',
+  'aboutDoctor.qualification1': 'அக்குபஞ்சர் முனைவர் பட்டம் (Acu PhD.)',
+  'aboutDoctor.qualification2': 'எம்.டி (ஹோமியோபதி)',
+  'aboutDoctor.qualification3': 'BSS சான்றிதழ் பெற்ற பயிற்சியாளர்',
+  'aboutDoctor.qualification4': 'மேம்பட்ட சித்த முத்திரை பயிற்சியாளர்',
+  'aboutDoctor.qualification5': 'யோகா டிப்ளமோ (வளக வளமுடன்)',
+  'aboutDoctor.qualification6': 'வர்மா சிகிச்சை நிபுணர்',
 
   // ── அக்குபஞ்சர் பற்றி (About Acupuncture) ──
   'aboutAcu.eyebrow': 'அக்குபஞ்சர் பற்றி',
@@ -178,6 +185,12 @@ export const TA: Record<string, string> = {
   'testimonials.eyebrow': 'அனுபவங்கள்',
   'testimonials.title': 'இயற்கை குணமாக்கலின் உண்மையான கதைகள்',
   'testimonials.subtitle': 'அக்குபஞ்சர் எவ்வாறு தங்கள் விரும்பிய வாழ்க்கைக்கு திரும்ப உதவியது என்பதை நோயாளிகள் பகிர்கிறார்கள்.',
+
+  // ── படத்தொகுப்பு ──
+  'gallery.eyebrow': 'சிகிச்சை படத்தொகுப்பு',
+  'gallery.title': 'எங்கள் மையத்தில் உண்மையான சிகிச்சைகள்',
+  'gallery.subtitle': 'ஜெய்ஸ்ரீ சாய்ராம் அக்குபஞ்சர் மையத்தில் நடைபெறும் சிகிச்சை அமர்வுகள் மற்றும் நோயாளி பராமரிப்பின் ஒரு பார்வை.',
+  'gallery.alt': 'மருத்துவமனை சிகிச்சை புகைப்படம்',
 
   // ── அடிக்கடி கேட்கப்படும் கேள்விகள் (FAQ) ──
   'faq.eyebrow': 'கேள்விகள்',

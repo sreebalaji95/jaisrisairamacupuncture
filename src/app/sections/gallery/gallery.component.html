@@ -1,0 +1,19 @@
+<section id="gallery" class="section gallery" aria-labelledby="gallery-title">
+  <div class="container">
+    <div class="section-heading" appReveal>
+      <span class="section-eyebrow">{{ i18n.t('gallery.eyebrow') }}</span>
+      <h2 id="gallery-title">{{ i18n.t('gallery.title') }}</h2>
+      <p>{{ i18n.t('gallery.subtitle') }}</p>
+    </div>
+
+    <div class="grid">
+      <figure class="tile" *ngFor="let src of photos; let i = index">
+        <img [src]="src"
+             [alt]="i18n.t('gallery.alt') + ' ' + (i + 1)"
+             loading="lazy"
+             decoding="async"
+             width="1200" height="1600">
+      </figure>
+    </div>
+  </div>
+</section>

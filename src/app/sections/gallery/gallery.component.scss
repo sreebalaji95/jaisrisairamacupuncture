@@ -1,0 +1,70 @@
+@use '../../../styles/mixins' as m;
+
+:host { display: block; }
+
+.section { @include m.section-pad; }
+
+.section-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(28px, 4vw, 48px);
+
+  p { margin-top: 12px; }
+}
+
+.grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar { height: 8px; }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-border-soft);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-track { background: transparent; }
+}
+
+.tile {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface-muted);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+  aspect-ratio: 3 / 4;
+  flex: 0 0 78%;
+  scroll-snap-align: start;
+
+  @include m.sm { flex-basis: 46%; }
+  @include m.md { flex-basis: 32%; }
+  @include m.lg { flex-basis: 24%; }
+}
+
+.tile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.tile:hover img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile, .tile img { transition: none; }
+  .tile:hover, .tile:hover img { transform: none; }
+}

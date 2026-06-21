@@ -5,9 +5,9 @@ export const CLINIC = {
   phone: '+91 9488456549',
   phoneRaw: '+919488456549',
   whatsapp: '919488456549',
-  email: 'jaisrisairamacupuncture@gmail.com',
-  mapsUrl: 'https://maps.app.goo.gl/VzDCx6CQtnd7JmLWA',
-  mapEmbedQuery: 'No. 2, Samundipuram 1st Street, Tirupur 641603',
+  email: 'jaisrisairamacupuncture2003@gmail.com',
+  mapsUrl: 'https://maps.app.goo.gl/iKt7U4ehTd3abVh29',
+  mapEmbedQuery: '11.123707,77.3188716',
   hours: [
     { day: 'Monday – Saturday', time: '9:00 AM – 8:00 PM' },
     { day: 'Sunday', time: 'By Appointment' }

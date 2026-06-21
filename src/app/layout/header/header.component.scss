@@ -60,7 +60,7 @@
 .brand-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  line-height: 1.4;
   min-width: 0;
 }
 
@@ -86,10 +86,6 @@
   margin-left: auto;
   gap: 4px;
   align-items: center;
-
-  @include m.lg {
-    display: flex;
-  }
 }
 
 .nav-desktop a {
@@ -98,6 +94,7 @@
   font-size: 0.92rem;
   padding: 10px 14px;
   border-radius: var(--radius-pill);
+  white-space: nowrap;
   transition: background var(--transition), color var(--transition);
 }
 
@@ -111,20 +108,10 @@
   align-items: center;
   gap: 12px;
   margin-left: auto;
-
-  @include m.lg {
-    margin-left: 0;
-  }
 }
 
 .header-switches {
   display: none;
-
-  @include m.lg {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
 }
 
 .cta-desktop {
@@ -149,10 +136,6 @@
   background: var(--color-surface-muted);
   color: var(--color-text);
   transition: background var(--transition), color var(--transition);
-
-  @include m.lg {
-    display: none;
-  }
 }
 
 .menu-btn app-icon {
@@ -177,10 +160,6 @@
   &.is-open {
     opacity: 1;
     visibility: visible;
-  }
-
-  @include m.lg {
-    display: none;
   }
 }
 

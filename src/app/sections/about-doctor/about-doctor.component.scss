@@ -79,4 +79,30 @@
 }
 .tick app-icon { width: 16px; height: 16px; }
 
+.qualifications-title {
+  font-size: 1.02rem;
+  margin: 4px 0 12px;
+  color: var(--color-text);
+}
+.qualifications {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.qualifications li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+}
+.qualifications li app-icon { width: 15px; height: 15px; flex-shrink: 0; }
+
 .about-ctas { display: flex; flex-wrap: wrap; gap: 12px; }

@@ -7,6 +7,7 @@ import { BenefitsComponent } from '../../sections/benefits/benefits.component';
 import { WhyChooseUsComponent } from '../../sections/why-choose-us/why-choose-us.component';
 import { ProcessTimelineComponent } from '../../sections/process-timeline/process-timeline.component';
 import { TestimonialsComponent } from '../../sections/testimonials/testimonials.component';
+import { GalleryComponent } from '../../sections/gallery/gallery.component';
 import { FaqComponent } from '../../sections/faq/faq.component';
 import { ContactComponent } from '../../sections/contact/contact.component';
 import { SeoService } from '../../core/seo.service';
@@ -23,6 +24,7 @@ import { SeoService } from '../../core/seo.service';
     WhyChooseUsComponent,
     ProcessTimelineComponent,
     TestimonialsComponent,
+    GalleryComponent,
     FaqComponent,
     ContactComponent
   ],
@@ -36,6 +38,7 @@ import { SeoService } from '../../core/seo.service';
       <app-why-choose-us/>
       <app-process-timeline/>
       <app-testimonials/>
+      <app-gallery/>
       <app-faq/>
       <app-contact/>
     </main>

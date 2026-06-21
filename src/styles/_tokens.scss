@@ -39,8 +39,8 @@
                    linear-gradient(180deg, #ffffff 0%, #f5faf7 100%);
   --gradient-primary: linear-gradient(135deg, #2BA84A 0%, #1E88E5 100%);
 
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', 'Noto Sans Tamil', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Noto Sans Tamil', 'Inter', system-ui, sans-serif;
 
   --fs-h1: clamp(2.1rem, 3.4vw + 1rem, 3.6rem);
   --fs-h2: clamp(1.6rem, 1.8vw + 1rem, 2.5rem);

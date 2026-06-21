@@ -23,6 +23,13 @@
           {{ p }}
         </li>
       </ul>
+      <h3 class="qualifications-title">{{ i18n.t('aboutDoctor.qualificationsTitle') }}</h3>
+      <ul class="qualifications">
+        <li *ngFor="let q of qualifications()">
+          <app-icon name="badge"></app-icon>
+          {{ q }}
+        </li>
+      </ul>
       <div class="about-ctas">
         <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-primary">
           <app-icon name="whatsapp"></app-icon>

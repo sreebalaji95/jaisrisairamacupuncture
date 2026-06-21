@@ -50,6 +50,13 @@ export const EN: Record<string, string> = {
   'aboutDoctor.point3': 'Completely drug-free treatments',
   'aboutDoctor.point4': 'Personalized diagnosis and plan',
   'aboutDoctor.point5': 'Focus on long-term wellness, not quick fixes',
+  'aboutDoctor.qualificationsTitle': 'Qualifications & Certifications',
+  'aboutDoctor.qualification1': 'Acu PhD.',
+  'aboutDoctor.qualification2': 'MD (Homeopathy)',
+  'aboutDoctor.qualification3': 'BSS Certified Practitioner',
+  'aboutDoctor.qualification4': 'Advanced Siddha Mudra Practitioner',
+  'aboutDoctor.qualification5': 'Diploma in Yoga (Valga Valamudan)',
+  'aboutDoctor.qualification6': 'Varma Therapy Specialist',
 
   // ── About Acupuncture ──
   'aboutAcu.eyebrow': 'About Acupuncture',
@@ -178,6 +185,12 @@ export const EN: Record<string, string> = {
   'testimonials.eyebrow': 'Testimonials',
   'testimonials.title': 'Real Stories of Natural Healing',
   'testimonials.subtitle': 'Patients share how acupuncture has helped them return to a life they love.',
+
+  // ── Gallery ──
+  'gallery.eyebrow': 'Treatment Gallery',
+  'gallery.title': 'Real Treatments at Our Clinic',
+  'gallery.subtitle': 'A glimpse of acupuncture sessions and patient care at Jaisri Sairam Acupuncture Centre.',
+  'gallery.alt': 'Clinic treatment photo',
 
   // ── FAQ ──
   'faq.eyebrow': 'FAQ',

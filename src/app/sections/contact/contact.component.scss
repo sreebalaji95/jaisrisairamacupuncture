@@ -21,7 +21,14 @@
   box-shadow: var(--shadow-lg);
 }
 .info-card h3 { color: #fff; font-size: 1.3rem; margin: 0; }
-.info-card > small { display: block; color: rgba(255,255,255,0.86); font-size: 0.88rem; margin-bottom: 22px; }
+.info-card > small { display: block; color: rgba(255,255,255,0.86); font-size: 0.88rem; }
+.credentials {
+  margin: 6px 0 22px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.5;
+}
 
 .info-list {
   list-style: none;

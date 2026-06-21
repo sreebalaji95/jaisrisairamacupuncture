@@ -30,21 +30,46 @@ export class HeaderComponent {
   readonly scrolled = signal(false);
   readonly drawerOpen = signal(false);
 
+  private scrollLockY = 0;
+
   @HostListener('window:scroll')
   onScroll(): void {
     if (!isPlatformBrowser(this.platformId)) return;
     this.scrolled.set(window.scrollY > 24);
   }
 
+  @HostListener('window:resize')
+  onResize(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    if (this.drawerOpen() && window.innerWidth >= 1024) this.closeDrawer();
+  }
+
   toggleDrawer(): void {
     this.drawerOpen.update(v => !v);
-    if (isPlatformBrowser(this.platformId)) {
-      document.body.style.overflow = this.drawerOpen() ? 'hidden' : '';
+    if (this.drawerOpen()) {
+      this.lockScroll();
+    } else {
+      this.unlockScroll();
     }
   }
 
   closeDrawer(): void {
+    if (!this.drawerOpen()) return;
     this.drawerOpen.set(false);
-    if (isPlatformBrowser(this.platformId)) document.body.style.overflow = '';
+    this.unlockScroll();
+  }
+
+  private lockScroll(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    this.scrollLockY = window.scrollY;
+    document.body.style.top = `-${this.scrollLockY}px`;
+    document.body.classList.add('is-scroll-locked');
+  }
+
+  private unlockScroll(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    document.body.classList.remove('is-scroll-locked');
+    document.body.style.top = '';
+    window.scrollTo(0, this.scrollLockY);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -25,6 +25,15 @@ export class ContactComponent {
   );
 
   readonly form = signal({ name: '', phone: '', date: '', concern: '' });
+
+  readonly qualifications = computed(() => [
+    this.i18n.t('aboutDoctor.qualification1'),
+    this.i18n.t('aboutDoctor.qualification2'),
+    this.i18n.t('aboutDoctor.qualification3'),
+    this.i18n.t('aboutDoctor.qualification4'),
+    this.i18n.t('aboutDoctor.qualification5'),
+    this.i18n.t('aboutDoctor.qualification6'),
+  ]);
 
   update(field: 'name' | 'phone' | 'date' | 'concern', value: string): void {
     this.form.update(f => ({ ...f, [field]: value }));

@@ -29,8 +29,7 @@ export const EN: Record<string, string> = {
 
   // ── Hero ──
   'hero.eyebrow': 'Natural Healing • Drug-Free',
-  'hero.titleLine1': 'Natural Healing Through',
-  'hero.titleHighlight': 'Acupuncture',
+  'hero.title': 'Jaisri Sairam Acupuncture Centre',
   'hero.description': 'Experience safe, drug-free and effective acupuncture treatments for pain relief, stress management, lifestyle disorders and overall wellness — personalized by Dr. Padmanabhan in Tirupur.',
   'hero.stat1Label': 'Years of Practice',
   'hero.stat2Label': 'Patients Treated',
@@ -52,11 +51,10 @@ export const EN: Record<string, string> = {
   'aboutDoctor.point5': 'Focus on long-term wellness, not quick fixes',
   'aboutDoctor.qualificationsTitle': 'Qualifications & Certifications',
   'aboutDoctor.qualification1': 'Acu PhD.',
-  'aboutDoctor.qualification2': 'MD (Homeopathy)',
-  'aboutDoctor.qualification3': 'BSS Certified Practitioner',
-  'aboutDoctor.qualification4': 'Advanced Siddha Mudra Practitioner',
-  'aboutDoctor.qualification5': 'Diploma in Yoga (Valga Valamudan)',
-  'aboutDoctor.qualification6': 'Varma Therapy Specialist',
+  'aboutDoctor.qualification2': 'Homeo BSS',
+  'aboutDoctor.qualification3': 'Advanced Siddha Mudra Practitioner',
+  'aboutDoctor.qualification4': 'Diploma in Yoga (Valga Valamudan)',
+  'aboutDoctor.qualification5': 'Varma Therapy Specialist',
 
   // ── About Acupuncture ──
   'aboutAcu.eyebrow': 'About Acupuncture',
@@ -239,8 +237,6 @@ export const EN: Record<string, string> = {
   'footer.service6': 'Wellness Therapy',
 
   // ── Hours ──
-  'hours.monSat': 'Monday – Saturday',
-  'hours.sunday': 'Sunday',
-  'hours.monSatTime': '9:00 AM – 8:00 PM',
-  'hours.sundayTime': 'By Appointment',
+  'hours.monSat': 'Monday to Saturday',
+  'hours.monSatTime': '10:00 AM onwards',
 };

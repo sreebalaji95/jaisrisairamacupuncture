@@ -106,3 +106,4 @@
 .qualifications li app-icon { width: 15px; height: 15px; flex-shrink: 0; }
 
 .about-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.about-ctas .btn-ghost { font-size: var(--fs-phone); font-weight: 600; }

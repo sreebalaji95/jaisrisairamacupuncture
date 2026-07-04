@@ -48,6 +48,9 @@
   --fs-body: 1rem;
   --fs-sm: 0.875rem;
   --fs-xs: 0.78rem;
+  --fs-phone: clamp(1.05rem, 0.4vw + 0.95rem, 1.3rem);
+
+  --brand-red: #c62828;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -106,6 +109,8 @@
   --orb-green: #1a4028;
   --orb-blue: #1a2f48;
   --orb-soft: #1a2a20;
+
+  --brand-red: #ff7b72;
 }
 
 /* Fallback: auto-apply dark mode before JS loads if no data-theme is set */
@@ -148,6 +153,8 @@
     --orb-green: #1a4028;
     --orb-blue: #1a2f48;
     --orb-soft: #1a2a20;
+
+    --brand-red: #ff7b72;
   }
 }
 

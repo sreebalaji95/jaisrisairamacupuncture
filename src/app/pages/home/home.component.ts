@@ -34,11 +34,11 @@ import { SeoService } from '../../core/seo.service';
       <app-about-doctor/>
       <app-about-acupuncture/>
       <app-treatments/>
+      <app-gallery/>
       <app-benefits/>
       <app-why-choose-us/>
       <app-process-timeline/>
       <app-testimonials/>
-      <app-gallery/>
       <app-faq/>
       <app-contact/>
     </main>

@@ -45,6 +45,7 @@
 }
 .info-list a { color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.4); }
 .info-list a:hover { color: #fff; text-decoration-color: #fff; }
+.info-list a[href^="tel"] { font-size: var(--fs-phone); font-weight: 700; }
 .ico {
   width: 32px; height: 32px;
   border-radius: 10px;

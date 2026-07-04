@@ -29,8 +29,7 @@ export const TA: Record<string, string> = {
 
   // ── முகப்பு (Hero) ──
   'hero.eyebrow': 'இயற்கை குணமாக்கல் • மருந்தில்லா',
-  'hero.titleLine1': 'அக்குபஞ்சர் மூலம்',
-  'hero.titleHighlight': 'இயற்கை குணமாக்கல்',
+  'hero.title': 'ஜெய்ஸ்ரீ சாய்ராம் அக்குபஞ்சர் மையம்',
   'hero.description': 'வலி நிவாரணம், மன அழுத்த மேலாண்மை, வாழ்க்கை முறை நோய்கள் மற்றும் ஒட்டுமொத்த நலனுக்காக பாதுகாப்பான, மருந்தில்லா அக்குபஞ்சர் சிகிச்சை — திருப்பூரில் டாக்டர் பத்மநாபன் மூலம் தனிப்பயனாக்கப்பட்டது.',
   'hero.stat1Label': 'ஆண்டுகள் அனுபவம்',
   'hero.stat2Label': 'நோயாளிகள் சிகிச்சை',
@@ -52,11 +51,10 @@ export const TA: Record<string, string> = {
   'aboutDoctor.point5': 'நீண்டகால நலனுக்கு முக்கியத்துவம், விரைவான தீர்வுகள் அல்ல',
   'aboutDoctor.qualificationsTitle': 'தகுதிகள் & சான்றிதழ்கள்',
   'aboutDoctor.qualification1': 'அக்குபஞ்சர் முனைவர் பட்டம் (Acu PhD.)',
-  'aboutDoctor.qualification2': 'எம்.டி (ஹோமியோபதி)',
-  'aboutDoctor.qualification3': 'BSS சான்றிதழ் பெற்ற பயிற்சியாளர்',
-  'aboutDoctor.qualification4': 'மேம்பட்ட சித்த முத்திரை பயிற்சியாளர்',
-  'aboutDoctor.qualification5': 'யோகா டிப்ளமோ (வளக வளமுடன்)',
-  'aboutDoctor.qualification6': 'வர்மா சிகிச்சை நிபுணர்',
+  'aboutDoctor.qualification2': 'ஹோமியோ BSS',
+  'aboutDoctor.qualification3': 'மேம்பட்ட சித்த முத்திரை பயிற்சியாளர்',
+  'aboutDoctor.qualification4': 'யோகா டிப்ளமோ (வளக வளமுடன்)',
+  'aboutDoctor.qualification5': 'வர்மா சிகிச்சை நிபுணர்',
 
   // ── அக்குபஞ்சர் பற்றி (About Acupuncture) ──
   'aboutAcu.eyebrow': 'அக்குபஞ்சர் பற்றி',
@@ -239,8 +237,6 @@ export const TA: Record<string, string> = {
   'footer.service6': 'நல சிகிச்சை',
 
   // ── நேரம் (Hours) ──
-  'hours.monSat': 'திங்கள் – சனி',
-  'hours.sunday': 'ஞாயிறு',
-  'hours.monSatTime': 'காலை 9:00 – இரவு 8:00',
-  'hours.sundayTime': 'முன்பதிவு மூலம்',
+  'hours.monSat': 'திங்கள் முதல் சனி வரை',
+  'hours.monSatTime': 'காலை 10:00 மணி முதல்',
 };

@@ -9,8 +9,7 @@ export const CLINIC = {
   mapsUrl: 'https://maps.app.goo.gl/iKt7U4ehTd3abVh29',
   mapEmbedQuery: '11.123707,77.3188716',
   hours: [
-    { day: 'Monday – Saturday', time: '9:00 AM – 8:00 PM' },
-    { day: 'Sunday', time: 'By Appointment' }
+    { day: 'Monday to Saturday', time: '10:00 AM onwards' }
   ],
   whatsappMessage:
     'Hello Doctor,\n\nI would like to book an appointment for Acupuncture Treatment.\n\nName:\nPhone:\nPreferred Date:\nHealth Concern:'

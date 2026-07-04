@@ -32,7 +32,6 @@ export class ContactComponent {
     this.i18n.t('aboutDoctor.qualification3'),
     this.i18n.t('aboutDoctor.qualification4'),
     this.i18n.t('aboutDoctor.qualification5'),
-    this.i18n.t('aboutDoctor.qualification6'),
   ]);
 
   update(field: 'name' | 'phone' | 'date' | 'concern', value: string): void {

@@ -32,6 +32,5 @@ export class AboutDoctorComponent {
     this.i18n.t('aboutDoctor.qualification3'),
     this.i18n.t('aboutDoctor.qualification4'),
     this.i18n.t('aboutDoctor.qualification5'),
-    this.i18n.t('aboutDoctor.qualification6'),
   ]);
 }

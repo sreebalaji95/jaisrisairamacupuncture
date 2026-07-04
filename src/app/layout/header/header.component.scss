@@ -221,6 +221,11 @@
   width: 100%;
 }
 
+.drawer-cta .btn-secondary {
+  font-size: var(--fs-phone);
+  font-weight: 600;
+}
+
 .drawer-switches {
   display: flex;
   align-items: center;

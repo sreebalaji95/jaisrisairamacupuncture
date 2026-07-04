@@ -10,19 +10,19 @@
         <app-icon name="lotus"></app-icon>
         {{ i18n.t('hero.eyebrow') }}
       </span>
-      <h1 id="hero-title">
-        {{ i18n.t('hero.titleLine1') }}
-        <span class="text-gradient">{{ i18n.t('hero.titleHighlight') }}</span>
-      </h1>
+      <h1 id="hero-title">{{ i18n.t('hero.title') }}</h1>
       <p>{{ i18n.t('hero.description') }}</p>
       <div class="hero-ctas">
         <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-primary">
           <app-icon name="whatsapp"></app-icon>
           {{ i18n.t('common.bookConsultation') }}
         </a>
-        <a [href]="wa.telLink" class="btn btn-secondary">
+        <a [href]="wa.telLink" class="btn btn-call">
           <app-icon name="phone"></app-icon>
-          {{ i18n.t('common.callNow') }}
+          <span class="btn-call-text">
+            <small>{{ i18n.t('common.callNow') }}</small>
+            <strong>{{ clinic.phone }}</strong>
+          </span>
         </a>
       </div>
       <div class="hero-trust">

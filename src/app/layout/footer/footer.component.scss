@@ -54,6 +54,7 @@
 .socials a:hover { background: var(--color-primary); color: #fff; transform: translateY(-2px); }
 
 .contact-list { gap: 12px; }
+.contact-list a[href^="tel"] { font-size: var(--fs-phone); font-weight: 600; }
 .contact-list li {
   display: flex; gap: 10px; align-items: flex-start;
   color: var(--color-text-muted);

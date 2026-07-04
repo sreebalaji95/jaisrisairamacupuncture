@@ -44,22 +44,31 @@ import { I18nService } from '../../core/i18n.service';
       padding: 22px 22px;
       background: var(--color-surface);
       border: 1px solid var(--color-border-soft);
+      border-top: 3px solid var(--color-primary);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
     }
+    .card:nth-child(2n) { border-top-color: var(--color-accent); }
     .card:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-md);
       border-color: var(--color-accent-soft);
+      border-top-color: var(--color-primary);
     }
+    .card:nth-child(2n):hover { border-top-color: var(--color-accent); }
     .icon {
-      width: 48px; height: 48px;
-      border-radius: 14px;
-      background: var(--color-accent-soft);
-      color: var(--color-accent-dark);
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: #fff;
+      box-shadow: 0 8px 18px -8px rgba(43, 168, 74, 0.5);
       display: grid; place-items: center;
       flex-shrink: 0;
+    }
+    .card:nth-child(2n) .icon {
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+      box-shadow: 0 8px 18px -8px rgba(30, 136, 229, 0.5);
     }
     .icon app-icon { width: 24px; height: 24px; }
     h3 { font-size: 1rem; margin: 0 0 4px; }

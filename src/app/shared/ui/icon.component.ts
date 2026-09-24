@@ -12,11 +12,10 @@ export type IconName =
   | 'facebook' | 'instagram' | 'youtube';
 
 @Component({
-  selector: 'app-icon',
-  standalone: true,
-  imports: [],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'app-icon',
+    imports: [],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <svg [attr.viewBox]="viewBox" xmlns="http://www.w3.org/2000/svg"
       fill="none" stroke="currentColor" stroke-width="1.8"
       stroke-linecap="round" stroke-linejoin="round"
@@ -198,7 +197,7 @@ export type IconName =
       </ng-container>
     </svg>
     `,
-  styles: [`
+    styles: [`
     :host { display: inline-flex; }
     svg { width: 100%; height: 100%; display: block; }
   `]

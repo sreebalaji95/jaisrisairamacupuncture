@@ -7,23 +7,22 @@ import { ScrollToTopComponent } from './layout/scroll-to-top/scroll-to-top.compo
 import { ThemeService } from './core/theme.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    FloatingWhatsappComponent,
-    ScrollToTopComponent
-  ],
-  template: `
+    selector: 'app-root',
+    imports: [
+        RouterOutlet,
+        HeaderComponent,
+        FooterComponent,
+        FloatingWhatsappComponent,
+        ScrollToTopComponent
+    ],
+    template: `
     <app-header />
     <router-outlet />
     <app-footer />
     <app-floating-whatsapp />
     <app-scroll-to-top />
   `,
-  styleUrl: './app.component.scss'
+    styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
   private readonly theme = inject(ThemeService);

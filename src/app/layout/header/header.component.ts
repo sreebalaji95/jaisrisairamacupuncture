@@ -10,11 +10,10 @@ import { ThemeSwitchComponent } from '../../shared/ui/theme-switch.component';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [RouterLink, IconComponent, LangSwitchComponent, ThemeSwitchComponent],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'app-header',
+    imports: [RouterLink, IconComponent, LangSwitchComponent, ThemeSwitchComponent],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   readonly clinic = CLINIC;

@@ -6,11 +6,10 @@ import { IconComponent } from '../../shared/ui/icon.component';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
-  selector: 'app-about-doctor',
-  standalone: true,
-  imports: [RevealDirective, IconComponent],
-  templateUrl: './about-doctor.component.html',
-  styleUrl: './about-doctor.component.scss'
+    selector: 'app-about-doctor',
+    imports: [RevealDirective, IconComponent],
+    templateUrl: './about-doctor.component.html',
+    styleUrl: './about-doctor.component.scss'
 })
 export class AboutDoctorComponent {
   readonly clinic = CLINIC;

@@ -3,10 +3,9 @@ import { Component, HostListener, PLATFORM_ID, inject, signal } from '@angular/c
 import { IconComponent } from '../../shared/ui/icon.component';
 
 @Component({
-  selector: 'app-scroll-to-top',
-  standalone: true,
-  imports: [IconComponent],
-  template: `
+    selector: 'app-scroll-to-top',
+    imports: [IconComponent],
+    template: `
     <button class="scroll-to-top"
             [class.is-visible]="visible()"
             (click)="toTop()"
@@ -14,7 +13,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
       <app-icon name="arrow-up"></app-icon>
     </button>
   `,
-  styles: [`
+    styles: [`
     .scroll-to-top {
       position: fixed;
       right: 18px;

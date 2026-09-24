@@ -7,11 +7,10 @@ import { IconComponent } from '../../shared/ui/icon.component';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
-  selector: 'app-hero',
-  standalone: true,
-  imports: [RevealDirective, IconComponent],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+    selector: 'app-hero',
+    imports: [RevealDirective, IconComponent],
+    templateUrl: './hero.component.html',
+    styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
   readonly wa = inject(WhatsappService);

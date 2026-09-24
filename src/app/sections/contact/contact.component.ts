@@ -8,11 +8,10 @@ import { IconComponent } from '../../shared/ui/icon.component';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [FormsModule, RevealDirective, IconComponent],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+    selector: 'app-contact',
+    imports: [FormsModule, RevealDirective, IconComponent],
+    templateUrl: './contact.component.html',
+    styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
   readonly clinic = CLINIC;

@@ -5,10 +5,9 @@ import { IconComponent } from '../../shared/ui/icon.component';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
-  selector: 'app-about-acupuncture',
-  standalone: true,
-  imports: [RevealDirective, IconComponent],
-  template: `
+    selector: 'app-about-acupuncture',
+    imports: [RevealDirective, IconComponent],
+    template: `
     <section id="about-acupuncture" class="section about-acupuncture" aria-labelledby="about-acu-title">
       <div class="container">
         <div class="section-heading" appReveal>
@@ -29,7 +28,7 @@ import { I18nService } from '../../core/i18n.service';
       </div>
     </section>
     `,
-  styles: [`
+    styles: [`
     :host { display: block; }
     .section { padding-block: clamp(48px, 8vw, 96px); background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface-muted) 100%); }
     .grid {

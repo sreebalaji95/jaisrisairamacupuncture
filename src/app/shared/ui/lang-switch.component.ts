@@ -3,7 +3,6 @@ import { I18nService } from '../../core/i18n.service';
 
 @Component({
   selector: 'app-lang-switch',
-  standalone: true,
   template: `
     <button class="lang-switch" (click)="i18n.toggle()"
             [attr.aria-label]="i18n.locale() === 'en' ? 'Switch to Tamil' : 'Switch to English'">

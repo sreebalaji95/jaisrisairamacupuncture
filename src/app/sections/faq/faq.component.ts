@@ -5,10 +5,9 @@ import { IconComponent } from '../../shared/ui/icon.component';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
-  selector: 'app-faq',
-  standalone: true,
-  imports: [RevealDirective, IconComponent],
-  template: `
+    selector: 'app-faq',
+    imports: [RevealDirective, IconComponent],
+    template: `
     <section id="faq" class="section faq" aria-labelledby="faq-title">
       <div class="container">
         <div class="section-heading" appReveal>
@@ -33,7 +32,7 @@ import { I18nService } from '../../core/i18n.service';
       </div>
     </section>
     `,
-  styles: [`
+    styles: [`
     :host { display: block; }
     .section { padding-block: clamp(48px, 8vw, 96px); }
 

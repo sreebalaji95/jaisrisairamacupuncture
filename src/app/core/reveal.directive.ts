@@ -3,7 +3,6 @@ import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
   selector: '[appReveal]',
-  standalone: true,
   host: { class: 'reveal' }
 })
 export class RevealDirective implements AfterViewInit, OnDestroy {

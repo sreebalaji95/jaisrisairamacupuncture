@@ -3,10 +3,9 @@ import { ThemeService } from '../../core/theme.service';
 import { IconComponent } from './icon.component';
 
 @Component({
-  selector: 'app-theme-switch',
-  standalone: true,
-  imports: [IconComponent],
-  template: `
+    selector: 'app-theme-switch',
+    imports: [IconComponent],
+    template: `
     <button class="theme-switch" (click)="theme.toggle()"
             [attr.aria-label]="theme.theme() === 'light' ? 'Switch to dark mode' : 'Switch to light mode'">
       <span class="icon-wrap" [class.is-dark]="theme.theme() === 'dark'">
@@ -15,7 +14,7 @@ import { IconComponent } from './icon.component';
       </span>
     </button>
   `,
-  styles: [`
+    styles: [`
     .theme-switch {
       display: inline-flex;
       align-items: center;

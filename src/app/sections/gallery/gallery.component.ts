@@ -3,11 +3,10 @@ import { RevealDirective } from '../../core/reveal.directive';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
-  selector: 'app-gallery',
-  standalone: true,
-  imports: [RevealDirective],
-  templateUrl: './gallery.component.html',
-  styleUrl: './gallery.component.scss'
+    selector: 'app-gallery',
+    imports: [RevealDirective],
+    templateUrl: './gallery.component.html',
+    styleUrl: './gallery.component.scss'
 })
 export class GalleryComponent {
   readonly i18n = inject(I18nService);

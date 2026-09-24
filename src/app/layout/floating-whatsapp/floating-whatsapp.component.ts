@@ -4,10 +4,9 @@ import { IconComponent } from '../../shared/ui/icon.component';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
-  selector: 'app-floating-whatsapp',
-  standalone: true,
-  imports: [IconComponent],
-  template: `
+    selector: 'app-floating-whatsapp',
+    imports: [IconComponent],
+    template: `
     <a class="floating-whatsapp" [href]="wa.link" target="_blank" rel="noopener"
        aria-label="Book consultation on WhatsApp">
       <span class="ring"></span>
@@ -15,7 +14,7 @@ import { I18nService } from '../../core/i18n.service';
       <span class="label">{{ i18n.t('common.chatOnWhatsapp') }}</span>
     </a>
   `,
-  styles: [`
+    styles: [`
     .floating-whatsapp {
       position: fixed;
       right: 18px;

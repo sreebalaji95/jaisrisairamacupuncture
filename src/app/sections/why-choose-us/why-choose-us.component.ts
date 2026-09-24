@@ -5,10 +5,9 @@ import { IconComponent } from '../../shared/ui/icon.component';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
-  selector: 'app-why-choose-us',
-  standalone: true,
-  imports: [RevealDirective, IconComponent],
-  template: `
+    selector: 'app-why-choose-us',
+    imports: [RevealDirective, IconComponent],
+    template: `
     <section id="why-choose-us" class="section why" aria-labelledby="why-title">
       <div class="container">
         <div class="section-heading" appReveal>
@@ -30,7 +29,7 @@ import { I18nService } from '../../core/i18n.service';
       </div>
     </section>
     `,
-  styles: [`
+    styles: [`
     :host { display: block; }
     .section { padding-block: clamp(48px, 8vw, 96px); }
     .grid {

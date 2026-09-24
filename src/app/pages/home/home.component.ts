@@ -13,22 +13,21 @@ import { ContactComponent } from '../../sections/contact/contact.component';
 import { SeoService } from '../../core/seo.service';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    HeroComponent,
-    AboutDoctorComponent,
-    AboutAcupunctureComponent,
-    TreatmentsComponent,
-    BenefitsComponent,
-    WhyChooseUsComponent,
-    ProcessTimelineComponent,
-    TestimonialsComponent,
-    GalleryComponent,
-    FaqComponent,
-    ContactComponent
-  ],
-  template: `
+    selector: 'app-home',
+    imports: [
+        HeroComponent,
+        AboutDoctorComponent,
+        AboutAcupunctureComponent,
+        TreatmentsComponent,
+        BenefitsComponent,
+        WhyChooseUsComponent,
+        ProcessTimelineComponent,
+        TestimonialsComponent,
+        GalleryComponent,
+        FaqComponent,
+        ContactComponent
+    ],
+    template: `
     <main id="main">
       <app-hero/>
       <app-about-doctor/>

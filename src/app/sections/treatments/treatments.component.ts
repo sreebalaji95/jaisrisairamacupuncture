@@ -54,11 +54,10 @@ const CATEGORY_KEY_MAP: Record<string, string> = {
 };
 
 @Component({
-  selector: 'app-treatments',
-  standalone: true,
-  imports: [RevealDirective, IconComponent],
-  templateUrl: './treatments.component.html',
-  styleUrl: './treatments.component.scss'
+    selector: 'app-treatments',
+    imports: [RevealDirective, IconComponent],
+    templateUrl: './treatments.component.html',
+    styleUrl: './treatments.component.scss'
 })
 export class TreatmentsComponent {
   readonly i18n = inject(I18nService);

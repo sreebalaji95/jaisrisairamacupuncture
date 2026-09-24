@@ -1,5 +1,4 @@
 import { Component, inject, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { BENEFITS } from '../../shared/data/benefits';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
@@ -8,7 +7,7 @@ import { I18nService } from '../../core/i18n.service';
 @Component({
   selector: 'app-benefits',
   standalone: true,
-  imports: [CommonModule, RevealDirective, IconComponent],
+  imports: [RevealDirective, IconComponent],
   template: `
     <section id="benefits" class="section benefits" aria-labelledby="benefits-title">
       <div class="container">
@@ -18,16 +17,18 @@ import { I18nService } from '../../core/i18n.service';
           <p>{{ i18n.t('benefits.subtitle') }}</p>
         </div>
         <div class="grid">
-          <article class="card" *ngFor="let b of items()">
-            <span class="check"><app-icon name="check"></app-icon></span>
-            <span class="icon"><app-icon [name]="b.icon"></app-icon></span>
-            <h3>{{ b.title }}</h3>
-            <p>{{ b.description }}</p>
-          </article>
+          @for (b of items(); track $index) {
+            <article class="card">
+              <span class="check"><app-icon name="check"></app-icon></span>
+              <span class="icon"><app-icon [name]="b.icon"></app-icon></span>
+              <h3>{{ b.title }}</h3>
+              <p>{{ b.description }}</p>
+            </article>
+          }
         </div>
       </div>
     </section>
-  `,
+    `,
   styles: [`
     :host { display: block; }
     .section {

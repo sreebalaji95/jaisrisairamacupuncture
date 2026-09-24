@@ -52,7 +52,7 @@
       <div class="form-card" appReveal>
         <h3>{{ i18n.t('contact.formTitle') }}</h3>
         <p>{{ i18n.t('contact.formSubtitle') }}</p>
-        <form (ngSubmit)="submit()" novalidate>
+        <form (ngSubmit)="submit()" ngNativeValidate>
           <label>
             <span>{{ i18n.t('contact.labelName') }}</span>
             <input type="text" name="name" required autocomplete="name"

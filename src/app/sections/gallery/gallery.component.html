@@ -7,13 +7,15 @@
     </div>
 
     <div class="grid">
-      <figure class="tile" *ngFor="let src of photos; let i = index">
-        <img [src]="src"
-             [alt]="i18n.t('gallery.alt') + ' ' + (i + 1)"
-             loading="lazy"
-             decoding="async"
-             width="1200" height="1600">
-      </figure>
+      @for (src of photos; track src; let i = $index) {
+        <figure class="tile">
+          <img [src]="src"
+            [alt]="i18n.t('gallery.alt') + ' ' + (i + 1)"
+            loading="lazy"
+            decoding="async"
+            width="1200" height="1600">
+        </figure>
+      }
     </div>
   </div>
 </section>

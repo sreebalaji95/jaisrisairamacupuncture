@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TESTIMONIALS } from '../../shared/data/testimonials';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
@@ -8,7 +7,7 @@ import { I18nService } from '../../core/i18n.service';
 @Component({
   selector: 'app-testimonials',
   standalone: true,
-  imports: [CommonModule, RevealDirective, IconComponent],
+  imports: [RevealDirective, IconComponent],
   template: `
     <section id="testimonials" class="section testimonials" aria-labelledby="testi-title">
       <div class="container">
@@ -18,24 +17,28 @@ import { I18nService } from '../../core/i18n.service';
           <p>{{ i18n.t('testimonials.subtitle') }}</p>
         </div>
         <div class="grid">
-          <article class="card" *ngFor="let t of items" appReveal>
-            <span class="quote-mark" aria-hidden="true"><app-icon name="quote"></app-icon></span>
-            <div class="stars" aria-label="5 star rating">
-              <app-icon *ngFor="let _ of stars(t.rating)" name="star"></app-icon>
-            </div>
-            <p class="quote">\u201C{{ t.text }}\u201D</p>
-            <div class="footer">
-              <span class="avatar">{{ t.name.charAt(0) }}</span>
-              <div>
-                <strong>{{ t.name }}</strong>
-                <small>{{ t.location }} \u2022 {{ t.treatment }}</small>
+          @for (t of items; track t.name) {
+            <article class="card" appReveal>
+              <span class="quote-mark" aria-hidden="true"><app-icon name="quote"></app-icon></span>
+              <div class="stars" role="img" [attr.aria-label]="i18n.t('testimonials.ratingLabel').replace('{n}', '' + t.rating)">
+                @for (_ of stars(t.rating); track $index) {
+                  <app-icon name="star"></app-icon>
+                }
               </div>
-            </div>
-          </article>
+              <p class="quote">\u201C{{ t.text }}\u201D</p>
+              <div class="footer">
+                <span class="avatar">{{ t.name.charAt(0) }}</span>
+                <div>
+                  <strong>{{ t.name }}</strong>
+                  <small>{{ t.location }} \u2022 {{ t.treatment }}</small>
+                </div>
+              </div>
+            </article>
+          }
         </div>
       </div>
     </section>
-  `,
+    `,
   styles: [`
     :host { display: block; }
     .section {

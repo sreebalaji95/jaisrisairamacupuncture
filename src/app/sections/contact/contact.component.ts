@@ -1,5 +1,4 @@
 import { Component, inject, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CLINIC } from '../../shared/data/clinic';
@@ -11,7 +10,7 @@ import { I18nService } from '../../core/i18n.service';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, RevealDirective, IconComponent],
+  imports: [FormsModule, RevealDirective, IconComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -38,8 +37,9 @@ export class ContactComponent {
     this.form.update(f => ({ ...f, [field]: value }));
   }
 
-  submit(): string {
+  submit(): void {
     const f = this.form();
+    if (!f.name.trim() || !f.phone.trim()) return;
     const msgTemplate = this.i18n.t('contact.whatsappMsg');
     const message = msgTemplate
       .replace('{name}', f.name)
@@ -48,6 +48,5 @@ export class ContactComponent {
       .replace('{concern}', f.concern);
     const url = `https://wa.me/${this.clinic.whatsapp}?text=${encodeURIComponent(message)}`;
     if (typeof window !== 'undefined') window.open(url, '_blank', 'noopener');
-    return url;
   }
 }

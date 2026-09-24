@@ -1,12 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RevealDirective } from '../../core/reveal.directive';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [CommonModule, RevealDirective],
+  imports: [RevealDirective],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss'
 })

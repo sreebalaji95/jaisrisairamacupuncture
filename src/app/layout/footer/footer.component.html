@@ -9,28 +9,27 @@
         </span>
       </div>
       <p>{{ i18n.t('footer.tagline') }}</p>
-      <div class="socials" aria-label="Social links">
-        <a href="#" aria-label="Facebook"><app-icon name="facebook"></app-icon></a>
-        <a href="#" aria-label="Instagram"><app-icon name="instagram"></app-icon></a>
-        <a href="#" aria-label="YouTube"><app-icon name="youtube"></app-icon></a>
-      </div>
     </div>
 
     <div class="col">
       <h4>{{ i18n.t('footer.quickLinks') }}</h4>
       <ul>
-        <li *ngFor="let link of links()">
-          <a [routerLink]="['/']" [fragment]="link.fragment">{{ link.label }}</a>
-        </li>
+        @for (link of links(); track link.fragment) {
+          <li>
+            <a [routerLink]="['/']" [fragment]="link.fragment">{{ link.label }}</a>
+          </li>
+        }
       </ul>
     </div>
 
     <div class="col">
       <h4>{{ i18n.t('footer.treatments') }}</h4>
       <ul>
-        <li *ngFor="let s of serviceHighlights()">
-          <a [routerLink]="['/']" fragment="treatments">{{ s }}</a>
-        </li>
+        @for (s of serviceHighlights(); track $index) {
+          <li>
+            <a [routerLink]="['/']" fragment="treatments">{{ s }}</a>
+          </li>
+        }
       </ul>
     </div>
 

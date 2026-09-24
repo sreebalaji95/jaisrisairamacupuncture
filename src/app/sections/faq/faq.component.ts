@@ -1,5 +1,4 @@
 import { Component, inject, signal, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FAQS } from '../../shared/data/faqs';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
@@ -8,7 +7,7 @@ import { I18nService } from '../../core/i18n.service';
 @Component({
   selector: 'app-faq',
   standalone: true,
-  imports: [CommonModule, RevealDirective, IconComponent],
+  imports: [RevealDirective, IconComponent],
   template: `
     <section id="faq" class="section faq" aria-labelledby="faq-title">
       <div class="container">
@@ -17,21 +16,23 @@ import { I18nService } from '../../core/i18n.service';
           <h2 id="faq-title">{{ i18n.t('faq.title') }}</h2>
           <p>{{ i18n.t('faq.subtitle') }}</p>
         </div>
-
+    
         <div class="list" appReveal>
-          <details *ngFor="let f of items(); let i = index"
-                   [open]="open() === i"
-                   (toggle)="onToggle(i, $event)">
-            <summary>
-              <span>{{ f.question }}</span>
-              <span class="chev" aria-hidden="true"><app-icon name="chevron-down"></app-icon></span>
-            </summary>
-            <p>{{ f.answer }}</p>
-          </details>
+          @for (f of items(); track i; let i = $index) {
+            <details
+              [open]="open() === i"
+              (toggle)="onToggle(i, $event)">
+              <summary>
+                <span>{{ f.question }}</span>
+                <span class="chev" aria-hidden="true"><app-icon name="chevron-down"></app-icon></span>
+              </summary>
+              <p>{{ f.answer }}</p>
+            </details>
+          }
         </div>
       </div>
     </section>
-  `,
+    `,
   styles: [`
     :host { display: block; }
     .section { padding-block: clamp(48px, 8vw, 96px); }

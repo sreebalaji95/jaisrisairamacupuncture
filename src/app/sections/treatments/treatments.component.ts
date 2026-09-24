@@ -1,6 +1,5 @@
 import { Component, computed, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Treatment, TREATMENTS, TREATMENT_CATEGORIES, TreatmentCategory } from '../../shared/data/treatments';
+import { TREATMENTS, TREATMENT_CATEGORIES, TreatmentCategory } from '../../shared/data/treatments';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
 import { I18nService } from '../../core/i18n.service';
@@ -57,7 +56,7 @@ const CATEGORY_KEY_MAP: Record<string, string> = {
 @Component({
   selector: 'app-treatments',
   standalone: true,
-  imports: [CommonModule, RevealDirective, IconComponent],
+  imports: [RevealDirective, IconComponent],
   templateUrl: './treatments.component.html',
   styleUrl: './treatments.component.scss'
 })
@@ -85,6 +84,4 @@ export class TreatmentsComponent {
   setActive(c: Filter): void {
     this.active.set(c);
   }
-
-  trackByName = (_: number, t: Treatment & { translatedName: string }) => t.name;
 }

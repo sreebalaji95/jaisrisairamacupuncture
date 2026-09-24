@@ -26,10 +26,12 @@
         </a>
       </div>
       <div class="hero-trust">
-        <div class="trust-item" *ngFor="let s of stats()">
-          <strong>{{ s.value }}{{ s.suffix }}</strong>
-          <span>{{ s.label }}</span>
-        </div>
+        @for (s of stats(); track $index) {
+          <div class="trust-item">
+            <strong>{{ s.value }}{{ s.suffix }}</strong>
+            <span>{{ s.label }}</span>
+          </div>
+        }
       </div>
     </div>
 

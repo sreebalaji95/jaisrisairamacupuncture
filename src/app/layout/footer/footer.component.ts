@@ -1,5 +1,4 @@
 import { Component, inject, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { NAV_LINKS } from '../../shared/data/nav';
 import { CLINIC } from '../../shared/data/clinic';
@@ -10,7 +9,7 @@ import { I18nService } from '../../core/i18n.service';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, RouterLink, IconComponent],
+  imports: [RouterLink, IconComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })

@@ -1,11 +1,11 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { Component, HostListener, PLATFORM_ID, inject, signal } from '@angular/core';
 import { IconComponent } from '../../shared/ui/icon.component';
 
 @Component({
   selector: 'app-scroll-to-top',
   standalone: true,
-  imports: [CommonModule, IconComponent],
+  imports: [IconComponent],
   template: `
     <button class="scroll-to-top"
             [class.is-visible]="visible()"

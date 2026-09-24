@@ -1,5 +1,4 @@
 import { Component, inject, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ABOUT_ACUPUNCTURE } from '../../shared/data/about';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
@@ -8,7 +7,7 @@ import { I18nService } from '../../core/i18n.service';
 @Component({
   selector: 'app-about-acupuncture',
   standalone: true,
-  imports: [CommonModule, RevealDirective, IconComponent],
+  imports: [RevealDirective, IconComponent],
   template: `
     <section id="about-acupuncture" class="section about-acupuncture" aria-labelledby="about-acu-title">
       <div class="container">
@@ -18,16 +17,18 @@ import { I18nService } from '../../core/i18n.service';
           <p>{{ i18n.t('aboutAcu.subtitle') }}</p>
         </div>
         <div class="grid">
-          <article class="card" *ngFor="let item of items(); let i = index"
-                   appReveal [class]="'reveal-delay-' + (i % 3)">
-            <span class="icon"><app-icon [name]="item.icon"></app-icon></span>
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
-          </article>
+          @for (item of items(); track i; let i = $index) {
+            <article class="card"
+              appReveal [class]="'reveal-delay-' + (i % 3)">
+              <span class="icon"><app-icon [name]="item.icon"></app-icon></span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </article>
+          }
         </div>
       </div>
     </section>
-  `,
+    `,
   styles: [`
     :host { display: block; }
     .section { padding-block: clamp(48px, 8vw, 96px); background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface-muted) 100%); }

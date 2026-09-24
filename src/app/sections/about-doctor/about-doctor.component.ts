@@ -1,5 +1,4 @@
 import { Component, inject, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CLINIC } from '../../shared/data/clinic';
 import { WhatsappService } from '../../core/whatsapp.service';
 import { RevealDirective } from '../../core/reveal.directive';
@@ -9,7 +8,7 @@ import { I18nService } from '../../core/i18n.service';
 @Component({
   selector: 'app-about-doctor',
   standalone: true,
-  imports: [CommonModule, RevealDirective, IconComponent],
+  imports: [RevealDirective, IconComponent],
   templateUrl: './about-doctor.component.html',
   styleUrl: './about-doctor.component.scss'
 })

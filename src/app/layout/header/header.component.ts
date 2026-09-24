@@ -1,4 +1,4 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { Component, HostListener, PLATFORM_ID, inject, signal, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NAV_LINKS } from '../../shared/data/nav';
@@ -12,7 +12,7 @@ import { I18nService } from '../../core/i18n.service';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, IconComponent, LangSwitchComponent, ThemeSwitchComponent],
+  imports: [RouterLink, IconComponent, LangSwitchComponent, ThemeSwitchComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

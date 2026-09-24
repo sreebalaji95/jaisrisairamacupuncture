@@ -1,5 +1,4 @@
 import { Component, inject, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { WHY_CHOOSE } from '../../shared/data/why-choose';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
@@ -8,7 +7,7 @@ import { I18nService } from '../../core/i18n.service';
 @Component({
   selector: 'app-why-choose-us',
   standalone: true,
-  imports: [CommonModule, RevealDirective, IconComponent],
+  imports: [RevealDirective, IconComponent],
   template: `
     <section id="why-choose-us" class="section why" aria-labelledby="why-title">
       <div class="container">
@@ -18,17 +17,19 @@ import { I18nService } from '../../core/i18n.service';
           <p>{{ i18n.t('whyChoose.subtitle') }}</p>
         </div>
         <div class="grid">
-          <article class="card" *ngFor="let w of items()">
-            <span class="icon"><app-icon [name]="w.icon"></app-icon></span>
-            <div>
-              <h3>{{ w.title }}</h3>
-              <p>{{ w.description }}</p>
-            </div>
-          </article>
+          @for (w of items(); track $index) {
+            <article class="card">
+              <span class="icon"><app-icon [name]="w.icon"></app-icon></span>
+              <div>
+                <h3>{{ w.title }}</h3>
+                <p>{{ w.description }}</p>
+              </div>
+            </article>
+          }
         </div>
       </div>
     </section>
-  `,
+    `,
   styles: [`
     :host { display: block; }
     .section { padding-block: clamp(48px, 8vw, 96px); }

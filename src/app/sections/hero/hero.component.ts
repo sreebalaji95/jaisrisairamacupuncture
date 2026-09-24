@@ -1,5 +1,4 @@
 import { Component, inject, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { WhatsappService } from '../../core/whatsapp.service';
 import { CLINIC } from '../../shared/data/clinic';
 import { HERO_STATS } from '../../shared/data/about';
@@ -10,7 +9,7 @@ import { I18nService } from '../../core/i18n.service';
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, RevealDirective, IconComponent],
+  imports: [RevealDirective, IconComponent],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })

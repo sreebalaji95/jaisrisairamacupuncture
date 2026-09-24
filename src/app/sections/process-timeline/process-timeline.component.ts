@@ -1,5 +1,4 @@
 import { Component, inject, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { PROCESS_STEPS } from '../../shared/data/process';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
@@ -8,7 +7,7 @@ import { I18nService } from '../../core/i18n.service';
 @Component({
   selector: 'app-process-timeline',
   standalone: true,
-  imports: [CommonModule, RevealDirective, IconComponent],
+  imports: [RevealDirective, IconComponent],
   template: `
     <section id="process" class="section process" aria-labelledby="process-title">
       <div class="container">
@@ -18,19 +17,23 @@ import { I18nService } from '../../core/i18n.service';
           <p>{{ i18n.t('process.subtitle') }}</p>
         </div>
         <ol class="timeline">
-          <li *ngFor="let s of steps(); let last = last" appReveal>
-            <span class="num">{{ s.step }}</span>
-            <div class="content">
-              <span class="icon"><app-icon [name]="s.icon"></app-icon></span>
-              <h3>{{ s.title }}</h3>
-              <p>{{ s.description }}</p>
-            </div>
-            <span class="connector" *ngIf="!last" aria-hidden="true"></span>
-          </li>
+          @for (s of steps(); track s.step; let last = $last) {
+            <li appReveal>
+              <span class="num">{{ s.step }}</span>
+              <div class="content">
+                <span class="icon"><app-icon [name]="s.icon"></app-icon></span>
+                <h3>{{ s.title }}</h3>
+                <p>{{ s.description }}</p>
+              </div>
+              @if (!last) {
+                <span class="connector" aria-hidden="true"></span>
+              }
+            </li>
+          }
         </ol>
       </div>
     </section>
-  `,
+    `,
   styles: [`
     :host { display: block; }
     .section { padding-block: clamp(48px, 8vw, 96px); background: linear-gradient(180deg, var(--color-surface-muted) 0%, var(--color-bg) 100%); }

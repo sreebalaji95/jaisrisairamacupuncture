@@ -183,6 +183,7 @@ export const EN: Record<string, string> = {
   'testimonials.eyebrow': 'Testimonials',
   'testimonials.title': 'Real Stories of Natural Healing',
   'testimonials.subtitle': 'Patients share how acupuncture has helped them return to a life they love.',
+  'testimonials.ratingLabel': '{n} out of 5 stars',
 
   // ── Gallery ──
   'gallery.eyebrow': 'Treatment Gallery',

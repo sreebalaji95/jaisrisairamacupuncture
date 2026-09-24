@@ -4,8 +4,6 @@ import {
   withInMemoryScrolling,
   withRouterConfig
 } from '@angular/router';
-import { provideClientHydration } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
 
@@ -18,8 +16,6 @@ export const appConfig: ApplicationConfig = {
         scrollPositionRestoration: 'enabled'
       }),
       withRouterConfig({ onSameUrlNavigation: 'reload' })
-    ),
-    provideClientHydration(),
-    provideAnimations()
+    )
   ]
 };

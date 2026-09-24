@@ -183,6 +183,7 @@ export const TA: Record<string, string> = {
   'testimonials.eyebrow': 'அனுபவங்கள்',
   'testimonials.title': 'இயற்கை குணமாக்கலின் உண்மையான கதைகள்',
   'testimonials.subtitle': 'அக்குபஞ்சர் எவ்வாறு தங்கள் விரும்பிய வாழ்க்கைக்கு திரும்ப உதவியது என்பதை நோயாளிகள் பகிர்கிறார்கள்.',
+  'testimonials.ratingLabel': '5 இல் {n} நட்சத்திரங்கள்',
 
   // ── படத்தொகுப்பு ──
   'gallery.eyebrow': 'சிகிச்சை படத்தொகுப்பு',

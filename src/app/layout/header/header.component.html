@@ -9,11 +9,13 @@
     </a>
 
     <nav class="nav-desktop" aria-label="Primary">
-      <a *ngFor="let link of links()"
-         [routerLink]="['/']"
-         [fragment]="link.fragment">
-        {{ link.label }}
-      </a>
+      @for (link of links(); track link.fragment) {
+        <a
+          [routerLink]="['/']"
+          [fragment]="link.fragment">
+          {{ link.label }}
+        </a>
+      }
     </nav>
 
     <div class="header-cta">
@@ -26,8 +28,8 @@
         {{ i18n.t('common.bookConsultation') }}
       </a>
       <button class="menu-btn" (click)="toggleDrawer()"
-              [attr.aria-expanded]="drawerOpen()"
-              aria-controls="mobile-drawer" [attr.aria-label]="i18n.t('header.openMenu')">
+        [attr.aria-expanded]="drawerOpen()"
+        aria-controls="mobile-drawer" [attr.aria-label]="i18n.t('header.openMenu')">
         <app-icon [name]="drawerOpen() ? 'close' : 'menu'"></app-icon>
       </button>
     </div>
@@ -37,12 +39,14 @@
 <div class="drawer" id="mobile-drawer" [class.is-open]="drawerOpen()" (click)="closeDrawer()">
   <div class="drawer-panel" (click)="$event.stopPropagation()">
     <nav aria-label="Mobile">
-      <a *ngFor="let link of links()"
-         [routerLink]="['/']"
-         [fragment]="link.fragment"
-         (click)="closeDrawer()">
-        {{ link.label }}
-      </a>
+      @for (link of links(); track link.fragment) {
+        <a
+          [routerLink]="['/']"
+          [fragment]="link.fragment"
+          (click)="closeDrawer()">
+          {{ link.label }}
+        </a>
+      }
     </nav>
     <div class="drawer-cta">
       <div class="drawer-switches">

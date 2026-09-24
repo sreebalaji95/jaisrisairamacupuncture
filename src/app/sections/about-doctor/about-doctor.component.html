@@ -3,9 +3,9 @@
     <div class="portrait" appReveal>
       <div class="portrait-frame">
         <img src="assets/images/doctor.jpg"
-             alt="Dr. Padmanabhan, certified acupuncturist at Jaisri Sairam Acupuncture Centre"
-             loading="lazy" decoding="async"
-             width="640" height="800">
+          alt="Dr. Padmanabhan, certified acupuncturist at Jaisri Sairam Acupuncture Centre"
+          loading="lazy" decoding="async"
+          width="640" height="800">
         <span class="portrait-badge">
           <app-icon name="badge"></app-icon>
           {{ i18n.t('aboutDoctor.badge') }}
@@ -18,17 +18,21 @@
       <h2 id="about-doctor-title">{{ i18n.t('aboutDoctor.title') }}</h2>
       <p>{{ i18n.t('aboutDoctor.description') }}</p>
       <ul class="points">
-        <li *ngFor="let p of points()">
-          <span class="tick"><app-icon name="check"></app-icon></span>
-          {{ p }}
-        </li>
+        @for (p of points(); track $index) {
+          <li>
+            <span class="tick"><app-icon name="check"></app-icon></span>
+            {{ p }}
+          </li>
+        }
       </ul>
       <h3 class="qualifications-title">{{ i18n.t('aboutDoctor.qualificationsTitle') }}</h3>
       <ul class="qualifications">
-        <li *ngFor="let q of qualifications()">
-          <app-icon name="badge"></app-icon>
-          {{ q }}
-        </li>
+        @for (q of qualifications(); track $index) {
+          <li>
+            <app-icon name="badge"></app-icon>
+            {{ q }}
+          </li>
+        }
       </ul>
       <div class="about-ctas">
         <a [href]="wa.link" target="_blank" rel="noopener" class="btn btn-primary">

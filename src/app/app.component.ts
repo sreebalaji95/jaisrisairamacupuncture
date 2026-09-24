@@ -1,4 +1,5 @@
 import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -27,5 +28,11 @@ import { ThemeService } from './core/theme.service';
 })
 export class AppComponent implements OnInit {
   private readonly theme = inject(ThemeService);
-  ngOnInit(): void { this.theme.init(); }
+  private readonly viewportScroller = inject(ViewportScroller);
+
+  ngOnInit(): void {
+    this.theme.init();
+    // Router anchor scrolling ignores CSS scroll-margin-top, so offset by the fixed header here.
+    this.viewportScroller.setOffset(() => [0, (document.querySelector('.site-header')?.clientHeight ?? 0) + 16]);
+  }
 }

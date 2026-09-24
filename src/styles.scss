@@ -23,7 +23,8 @@ body {
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  // clip (not hidden) so body doesn't become a scroll container, which would stop the sticky header sticking
+  overflow-x: clip;
 }
 
 body.is-scroll-locked {

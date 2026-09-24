@@ -70,6 +70,6 @@ export class HeaderComponent {
     if (!isPlatformBrowser(this.platformId)) return;
     document.body.classList.remove('is-scroll-locked');
     document.body.style.top = '';
-    window.scrollTo(0, this.scrollLockY);
+    window.scrollTo({ top: this.scrollLockY, behavior: 'instant' });
   }
 }

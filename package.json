@@ -10,6 +10,9 @@
     "build:gh-pages": "ng build --configuration production --base-href /jaisrisairamacupuncture/"
   },
   "private": true,
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0"
+  },
   "dependencies": {
     "@angular/common": "^22.2.0",
     "@angular/compiler": "^22.2.0",

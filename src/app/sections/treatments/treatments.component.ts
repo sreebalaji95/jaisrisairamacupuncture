@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { TREATMENTS, TREATMENT_CATEGORIES, TreatmentCategory } from '../../shared/data/treatments';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
@@ -57,6 +57,7 @@ const CATEGORY_KEY_MAP: Record<string, string> = {
     selector: 'app-treatments',
     imports: [RevealDirective, IconComponent],
     templateUrl: './treatments.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './treatments.component.scss'
 })
 export class TreatmentsComponent {

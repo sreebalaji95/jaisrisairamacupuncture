@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CLINIC } from '../../shared/data/clinic';
@@ -11,6 +11,7 @@ import { I18nService } from '../../core/i18n.service';
     selector: 'app-contact',
     imports: [FormsModule, RevealDirective, IconComponent],
     templateUrl: './contact.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './contact.component.scss'
 })
 export class ContactComponent {

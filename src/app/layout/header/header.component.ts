@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, HostListener, PLATFORM_ID, inject, signal, computed } from '@angular/core';
+import { Component, HostListener, PLATFORM_ID, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NAV_LINKS } from '../../shared/data/nav';
 import { CLINIC } from '../../shared/data/clinic';
@@ -13,6 +13,7 @@ import { I18nService } from '../../core/i18n.service';
     selector: 'app-header',
     imports: [RouterLink, IconComponent, LangSwitchComponent, ThemeSwitchComponent],
     templateUrl: './header.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './header.component.scss'
 })
 export class HeaderComponent {

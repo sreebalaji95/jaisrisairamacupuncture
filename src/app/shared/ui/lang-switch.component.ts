@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
@@ -11,6 +11,7 @@ import { I18nService } from '../../core/i18n.service';
       <span class="lang-option" [class.is-active]="i18n.locale() === 'ta'">தமிழ்</span>
     </button>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [`
     .lang-switch {
       display: inline-flex;

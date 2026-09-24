@@ -1,4 +1,4 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CLINIC } from '../../shared/data/clinic';
 import { WhatsappService } from '../../core/whatsapp.service';
 import { RevealDirective } from '../../core/reveal.directive';
@@ -9,6 +9,7 @@ import { I18nService } from '../../core/i18n.service';
     selector: 'app-about-doctor',
     imports: [RevealDirective, IconComponent],
     templateUrl: './about-doctor.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './about-doctor.component.scss'
 })
 export class AboutDoctorComponent {

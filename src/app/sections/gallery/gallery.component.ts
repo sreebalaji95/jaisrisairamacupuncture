@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { RevealDirective } from '../../core/reveal.directive';
 import { I18nService } from '../../core/i18n.service';
 
@@ -6,6 +6,7 @@ import { I18nService } from '../../core/i18n.service';
     selector: 'app-gallery',
     imports: [RevealDirective],
     templateUrl: './gallery.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './gallery.component.scss'
 })
 export class GalleryComponent {

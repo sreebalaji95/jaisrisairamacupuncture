@@ -1,4 +1,4 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
 import { WHY_CHOOSE } from '../../shared/data/why-choose';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
@@ -29,6 +29,7 @@ import { I18nService } from '../../core/i18n.service';
       </div>
     </section>
     `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     styles: [`
     :host { display: block; }
     .section { padding-block: clamp(48px, 8vw, 96px); }

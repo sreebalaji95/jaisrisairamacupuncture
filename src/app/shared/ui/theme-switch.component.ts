@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ThemeService } from '../../core/theme.service';
 import { IconComponent } from './icon.component';
 
@@ -14,6 +14,7 @@ import { IconComponent } from './icon.component';
       </span>
     </button>
   `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     styles: [`
     .theme-switch {
       display: inline-flex;

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { TESTIMONIALS } from '../../shared/data/testimonials';
 import { RevealDirective } from '../../core/reveal.directive';
 import { IconComponent } from '../../shared/ui/icon.component';
@@ -38,6 +38,7 @@ import { I18nService } from '../../core/i18n.service';
       </div>
     </section>
     `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     styles: [`
     :host { display: block; }
     .section {

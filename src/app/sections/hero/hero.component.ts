@@ -1,4 +1,4 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
 import { WhatsappService } from '../../core/whatsapp.service';
 import { CLINIC } from '../../shared/data/clinic';
 import { HERO_STATS } from '../../shared/data/about';
@@ -10,6 +10,7 @@ import { I18nService } from '../../core/i18n.service';
     selector: 'app-hero',
     imports: [RevealDirective, IconComponent],
     templateUrl: './hero.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './hero.component.scss'
 })
 export class HeroComponent {

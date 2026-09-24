@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, HostListener, PLATFORM_ID, inject, signal } from '@angular/core';
+import { Component, HostListener, PLATFORM_ID, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { IconComponent } from '../../shared/ui/icon.component';
 
 @Component({
@@ -13,6 +13,7 @@ import { IconComponent } from '../../shared/ui/icon.component';
       <app-icon name="arrow-up"></app-icon>
     </button>
   `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     styles: [`
     .scroll-to-top {
       position: fixed;

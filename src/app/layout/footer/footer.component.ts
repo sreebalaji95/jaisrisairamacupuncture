@@ -1,4 +1,4 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject, computed, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NAV_LINKS } from '../../shared/data/nav';
 import { CLINIC } from '../../shared/data/clinic';
@@ -10,6 +10,7 @@ import { I18nService } from '../../core/i18n.service';
     selector: 'app-footer',
     imports: [RouterLink, IconComponent],
     templateUrl: './footer.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './footer.component.scss'
 })
 export class FooterComponent {

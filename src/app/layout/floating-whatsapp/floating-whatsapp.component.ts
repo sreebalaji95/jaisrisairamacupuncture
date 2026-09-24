@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { WhatsappService } from '../../core/whatsapp.service';
 import { IconComponent } from '../../shared/ui/icon.component';
 import { I18nService } from '../../core/i18n.service';
@@ -14,6 +14,7 @@ import { I18nService } from '../../core/i18n.service';
       <span class="label">{{ i18n.t('common.chatOnWhatsapp') }}</span>
     </a>
   `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     styles: [`
     .floating-whatsapp {
       position: fixed;

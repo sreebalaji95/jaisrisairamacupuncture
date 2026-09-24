@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { HeroComponent } from '../../sections/hero/hero.component';
 import { AboutDoctorComponent } from '../../sections/about-doctor/about-doctor.component';
 import { AboutAcupunctureComponent } from '../../sections/about-acupuncture/about-acupuncture.component';
@@ -27,6 +27,7 @@ import { SeoService } from '../../core/seo.service';
         FaqComponent,
         ContactComponent
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     template: `
     <main id="main">
       <app-hero/>
